@@ -1,6 +1,109 @@
 import Head from 'next/head';
+import Image, { StaticImageData } from 'next/image';
+import big from 'public/images/big.png';
+import landingTour from 'public/images/landingTour.png';
+import small from 'public/images/small.png';
 
-import Header from '@/components/common/Header/Header';
+import Button from '@/components/common/Button';
+import Header from '@/components/common/Header';
+import Select from '@/components/common/Select';
+import Controls from '@/components/common/Select/Controls';
+import Options from '@/components/common/Select/Options';
+import useSelect from '@/utils/hooks/useSelect';
+
+const variants = ['Маленький коттедж', 'Большой коттедж'] as const;
+type Variants = typeof variants;
+const variantsPreview: Record<
+  Variants[number],
+  { description: JSX.Element; src: StaticImageData }
+> = {
+  'Маленький коттедж': {
+    description: (
+      <p className="h-96 text-white xl:h-auto">
+        У каждого коттеджа персональная беседка и мангал, шампура и решетки
+        предоставляем
+        <br />В доме
+        <br />
+        •Спальня:
+        <br />
+        Двухместная кровать (есть возможность трансформировать в две
+        одноместные)
+        <br />
+        •Кухня: Посуда, электроплита, маленький холодильник, чайник
+        электрический и заварочный, сковородка, кастрюли
+        <br />
+        •Гостиная: Телевизор, диван-кровать (для комфортного размещения 1
+        взрослого или 2 детей)
+        <br />
+        •Душ; туалет Каждому гостю предоставляется комплект полотенец
+      </p>
+    ),
+    src: small
+  },
+  'Большой коттедж': {
+    description: (
+      <p className="h-96 text-white xl:h-auto">
+        У каждого коттеджа персональная беседка и мангал, шампура и решетки
+        предоставляем
+        <br />
+        В доме
+        <br />
+        •Две спальни:
+        <br />
+        В каждой двухместная кровать (есть возможность трансформировать в две
+        одноместные)
+        <br />
+        •Кухня:
+        <br />
+        Посуда, электроплита, маленький холодильник, микроволновая печь чайник
+        электрический и заварочный, сковородка, кастрюли
+        <br />
+        •Гостиная:
+        <br />
+        Большой телевизор с системой Smart TV, угловой диван -кровать на два
+        спальных места
+        <br />
+        •Душ; туалет
+        <br />
+        Каждому гостю предоставляется комплект полотенец
+      </p>
+    ),
+    src: big
+  }
+};
+
+const Preview = () => {
+  const { chosen } = useSelect();
+
+  return (
+    <div className="flex flex-col gap-6 xl:flex-row">
+      <div className="flex flex-col items-center xl:relative xl:block">
+        <div className="my-6 mr-auto">
+          <Options options={variants} width={12} />
+        </div>
+        <Image
+          src={variantsPreview[chosen as Variants[number]].src}
+          alt={chosen}
+          className="xl:hidden"
+        />
+        {variantsPreview[chosen as Variants[number]].description}
+
+        <div className="xl:absolute xl:bottom-0">
+          <div className="mt-8">
+            <Button title="Посмотреть" />
+          </div>
+          <Controls options={variants} />
+        </div>
+      </div>
+
+      <Image
+        src={variantsPreview[chosen as Variants[number]].src}
+        alt={chosen}
+        className="hidden h-[634px] w-1/2 xl:block"
+      />
+    </div>
+  );
+};
 
 export default function Home() {
   return (
@@ -11,8 +114,92 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <main className="h-screen"></main>
+
+      <section className="relative min-h-screen w-auto bg-landingPhone bg-cover bg-center bg-no-repeat sm:bg-landingDesk">
+        <Header />
+        <div className="relative z-10 ml-5 mt-4 text-white lg:ml-48">
+          <h1 className="text-5xl font-extrabold !leading-snug lg:text-7xl 3xl:text-8xl">
+            GRAND
+            <br />
+            CHALET
+            <br />
+            ALTAY
+          </h1>
+          <div className="mt-8 flex flex-row items-center gap-5">
+            <div className="hidden h-0 w-[45px] border-2 border-accent lg:block" />
+            <p>Пять звёзд в окружении гор на берегу Катуни</p>
+          </div>
+        </div>
+
+        <div className="relative z-10 mx-5 mt-8 flex flex-col items-center gap-6 bg-white px-5 py-12 sm:pl-28 sm:pr-16 lg:mx-48 2xl:flex-row [&>*]:grow">
+          <div>
+            <label>Заезд</label>
+            <input />
+          </div>
+
+          <div>
+            <label>Выезд</label>
+            <input />
+          </div>
+
+          <div>
+            <label>Гости</label>
+            <input />
+          </div>
+
+          <Button title="Найти номер" filled />
+        </div>
+
+        <div
+          className="absolute bottom-0 z-0 hidden h-full w-full lg:block"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
+          }}
+        />
+      </section>
+
+      <section className="mt-12 px-5 lg:px-48">
+        <div className="flex flex-col-reverse gap-12 lg:flex-row 2xl:gap-20">
+          <Image src={landingTour} alt="image_tour" className="lg:w-1/3" />
+
+          <div className="flex flex-col">
+            <h2 className="mt-12 text-5xl font-bold text-accent md:text-6xl">
+              <span>ТУРКОМПЛЕКС</span>
+              <br />
+              <span className="2xl:ml-20">НА БЕРЕГУ КАТУНИ</span>
+            </h2>
+
+            <p className="mt-7 text-white 2xl:ml-20">
+              В сосновом бору на берегу реки Ока, расположилась уютная база
+              отдыха «Крутой Яр». Отдыхающих ждет чистый воздух и уютные
+              одноэтажные бревенчатые домики, прекрасное место и для любителей
+              рыбалки.
+            </p>
+
+            <div className="mb-4 mt-8 flex grow flex-col justify-between gap-6 lg:mt-auto lg:grow-0 lg:flex-row lg:items-center lg:gap-0 2xl:ml-20 [&>button]:w-full lg:[&>button]:w-[280px]">
+              <Button title="Карта туркомплекса" />
+              <p className="grow text-white lg:text-center">Как доехать</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16 px-5 lg:px-48">
+        <div className="flex flex-col">
+          <h2 className="mt-12 text-5xl font-bold text-accent md:text-6xl">
+            <span>ВАРИАНТЫ</span>
+            <br />
+            <span className="sm:ml-20">ПРОЖИВАНИЯ</span>
+          </h2>
+        </div>
+
+        <Select options={variants}>
+          <Preview />
+        </Select>
+      </section>
+
+      <section className="mt-16"></section>
     </>
   );
 }

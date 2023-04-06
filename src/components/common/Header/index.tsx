@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="absolute flex w-full flex-row items-center px-7 py-[34px] text-white">
+    <header className="flex w-full flex-row items-center px-7 py-[34px] text-white">
       <div className="flex flex-row">
         <Image
           priority
