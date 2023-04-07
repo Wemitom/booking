@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import Button from '@/components/common/Button';
 import FindRoom from '@/components/common/FindRoom';
 import Footer from '@/components/common/Footer';
@@ -6,21 +8,28 @@ import Header from '@/components/common/Header';
 const About = () => {
   return (
     <>
-      <section className="relative min-h-screen w-auto bg-landingPhone bg-cover bg-center bg-no-repeat sm:bg-landingDesk">
+      <Head>
+        <title>Контакты</title>
+
+        <link rel="preload" href="/images/about.png" as="image" />
+      </Head>
+
+      <section className="relative min-h-screen w-auto bg-about bg-cover bg-center bg-no-repeat">
         <Header />
-        <h1 className="relative ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
+        <h1 className="relative z-20 ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
           КОНТАКТЫ
         </h1>
 
         <FindRoom />
 
         <div
-          className="absolute bottom-0 z-0 h-full w-full"
+          className="absolute bottom-0 z-10 h-full w-full"
           style={{
             background:
               'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
           }}
         />
+        <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
       </section>
 
       <main className="flex flex-col gap-9 px-5 py-20 lg:flex-row lg:justify-between lg:px-48">

@@ -10,7 +10,8 @@ module.exports = {
         deskVector: 'url(/images/bgDesk.svg)',
         phoneVector: 'url(/images/bgPhone.svg)',
         landingDesk: 'url(/images/landingMainDesk.png)',
-        landingPhone: 'url(/images/landingMainPhone.png)'
+        landingPhone: 'url(/images/landingMainPhone.png)',
+        about: 'url(/images/about.png)'
       },
       colors: {
         primary: '#445139',

@@ -22,12 +22,13 @@ const IntroSection = () => {
       <FindRoom />
 
       <div
-        className="absolute bottom-0 z-0 hidden h-full w-full lg:block"
+        className="absolute bottom-0 z-10 h-full w-full"
         style={{
           background:
             'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
         }}
       />
+      <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
     </section>
   );
 };
