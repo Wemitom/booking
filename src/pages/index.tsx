@@ -1,15 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import 'react-datepicker/dist/react-datepicker.css';
+
+import { ru } from 'date-fns/locale';
 import Head from 'next/head';
 import Image from 'next/image';
+import calendar from 'public/images/calendar.svg';
 import compass from 'public/images/compass.svg';
 import experiences from 'public/images/experiences.png';
 import landingTour from 'public/images/landingTour.png';
 import location from 'public/images/locationHollow.svg';
+import map from 'public/images/map.png';
+import person from 'public/images/person.svg';
 import restaurantOne from 'public/images/restaurantOne.png';
 import restaurantTwo from 'public/images/restaurantTwo.png';
 import spa from 'public/images/spa.png';
 import star from 'public/images/star.svg';
+import DatePicker from 'react-datepicker';
+import { registerLocale, setDefaultLocale } from 'react-datepicker';
 
 import Button from '@/components/common/Button';
 import CircleButton from '@/components/common/CircleButton';
@@ -34,6 +42,12 @@ import { classNames, formatDate } from '@/utils/functions';
 import useSelect from '@/utils/hooks/useSelect';
 
 const MainSection = () => {
+  const [startDate, setStartDate] = useState<Date | null>(new Date());
+  const [endDate, setEndDate] = useState<Date | null>(new Date());
+
+  registerLocale('ru', ru);
+  setDefaultLocale('ru');
+
   return (
     <section className="relative min-h-screen w-auto bg-landingPhone bg-cover bg-center bg-no-repeat sm:bg-landingDesk">
       <Header />
@@ -52,20 +66,39 @@ const MainSection = () => {
           </div>
         </div>
 
-        <div className="relative z-10 mx-5 mt-8 flex flex-col items-center gap-6 bg-white px-5 py-12 sm:pl-28 sm:pr-16 lg:mx-48 2xl:flex-row [&>*]:grow">
-          <div>
-            <label>Заезд</label>
-            <input />
-          </div>
+        <div className="relative z-10 mx-5 mt-8 flex flex-col items-center gap-6 bg-white p-5 sm:pl-28 sm:pr-16 lg:mx-48 2xl:flex-row 2xl:px-5 2xl:py-12 [&>*]:grow">
+          <div className="flex flex-col items-start 2xl:flex-row 2xl:items-center 2xl:shadow-[4px_4px_4px_rgba(0,0,0,0.1)] [&>*]:w-full [&>*]:grow [&>*]:2xl:mr-4">
+            <div className="flex">
+              <div className="grow">
+                <label className="font-light">Заезд</label>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  className="font-inter font-semibold"
+                />
+              </div>
+              <Image src={calendar} alt="calendar" />
+            </div>
 
-          <div>
-            <label>Выезд</label>
-            <input />
-          </div>
+            <div className="flex">
+              <div className="grow">
+                <label className="font-light">Выезд</label>
+                <DatePicker
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                  className="font-inter font-semibold"
+                />
+              </div>
+              <Image src={calendar} alt="calendar" />
+            </div>
 
-          <div>
-            <label>Гости</label>
-            <input />
+            <div className="flex">
+              <div className="flex grow flex-col">
+                <label className="font-light">Гости</label>
+                <input />
+              </div>
+              <Image src={person} alt="person" />
+            </div>
           </div>
 
           <Button title="Найти номер" filled />
@@ -87,7 +120,11 @@ const TourSection = () => {
   return (
     <section className="mt-12 px-5 lg:px-48">
       <div className="flex flex-col-reverse gap-12 lg:flex-row 2xl:gap-20">
-        <Image src={landingTour} alt="image_tour" className="lg:w-1/3" />
+        <Image
+          src={landingTour}
+          alt="image_tour"
+          className="mx-auto lg:mx-0 lg:w-1/3"
+        />
 
         <div className="flex flex-col">
           <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl">
@@ -126,7 +163,7 @@ const Preview = () => {
         <Image
           src={variantsPreview[chosen as Variants[number]].src}
           alt={chosen}
-          className="xl:hidden"
+          className="my-auto xl:hidden"
         />
         {variantsPreview[chosen as Variants[number]].description}
 
@@ -236,7 +273,7 @@ const RestaurantsSection = () => {
 
           <Image src={restaurantOne} alt="resturant_one" className="w-full" />
 
-          <div className="mt-3 flex flex-col gap-10 lg:flex-row lg:items-center [&>*]:flex [&>*]:flex-col [&>*]:gap-3">
+          <div className="mt-3 flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10 [&>*]:flex [&>*]:flex-col [&>*]:gap-3">
             <div>
               <h3 className="text-3xl font-bold text-accent">
                 Завтрак «Шведский стол»
@@ -312,11 +349,9 @@ const Experineces = () => {
 const ExperiencesSection = () => {
   return (
     <section className="mt-16 px-5 lg:px-0">
-      <div className="flex flex-col">
-        <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl lg:px-48">
-          <p>ЯРКИЕ ВПЕЧАТЛЕНИЯ</p>
-        </h2>
-      </div>
+      <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl lg:px-48">
+        <p>ЯРКИЕ ВПЕЧАТЛЕНИЯ</p>
+      </h2>
 
       <div className="mt-9 flex flex-col-reverse gap-9 2xl:flex-row 2xl:gap-24">
         <div className="2xl:w-1/2">
@@ -390,7 +425,7 @@ const SightsSections = () => {
         <Image
           src={sightsShow[curPos].src}
           alt={curPos}
-          className="lg:max-w-[50%]"
+          className="w-full lg:max-w-[50%]"
         />
       </div>
 
@@ -558,12 +593,49 @@ const CommentsSection = () => {
   );
 };
 
+const TransferSection = () => {
+  return (
+    <section className="mt-16 px-5 lg:px-0">
+      <div className="flex flex-col xl:flex-row ">
+        <div className="flex flex-col lg:px-48">
+          <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl">
+            <span>ОРГАНИЗУЕМ</span>
+            <br />
+            <span className="sm:ml-20">ТРАНСФЕР</span>
+          </h2>
+
+          <div className="my-4 font-inter text-white sm:ml-20 xl:my-10 [&>p]:xl:mb-10">
+            <p>Принимаем гостей со всей России и из других стран.</p>
+            <p>Заберем вас из аэропорта Горно-Алтайска и доставим на место.</p>
+            <p>
+              Дорога знимает примерно 40 минут и проходит по живописным местам
+              среди алтайских гор, вдоль реки Катунь.
+            </p>
+          </div>
+
+          <div className="mb-6 flex flex-col items-center gap-5 xl:mb-16 xl:flex-row xl:items-start xl:gap-12">
+            <Button title="Заказать трансфер" filled />
+            <Button title="Построить маршрут" />
+          </div>
+        </div>
+
+        <div>
+          <Image src={map} alt="map" className="h-full w-full" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
+        <title>Grand Chalet Altay</title>
+        <meta
+          name="description"
+          content="В сосновом бору на берегу реки Ока, расположилась уютная база отдыха «Крутой Яр». Отдыхающих ждет чистый воздух и уютные одноэтажные бревенчатые домики, прекрасное место и для любителей рыбалки."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -576,6 +648,7 @@ export default function Home() {
       <ExperiencesSection />
       <SightsSections />
       <CommentsSection />
+      <TransferSection />
 
       <Footer />
     </>
