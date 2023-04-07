@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="flex w-full flex-row items-center px-7 py-[34px] text-white">
+    <header className="relative z-20 flex w-full flex-row items-center px-7 py-[34px] text-white">
       <div className="flex flex-row">
         <Image
           priority
@@ -29,7 +30,7 @@ const Header = () => {
 
         <p>Горнолыжный отдых</p>
 
-        <p>Контакты</p>
+        <Link href={'/about'}>Контакты</Link>
       </nav>
 
       <div className="ml-auto hidden sm:block">
