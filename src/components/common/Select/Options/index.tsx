@@ -20,7 +20,7 @@ const Options = ({
 
     if (indicator && prevChosen.current !== chosen && prevChosen.current) {
       const curPos = +indicator?.style.transform.replace(/[^-?\d.]/g, '');
-      console.log(curPos);
+
       indicator.style.transform = `translateX(${
         curPos +
         (options.indexOf(chosen) - options.indexOf(prevChosen.current)) * width
