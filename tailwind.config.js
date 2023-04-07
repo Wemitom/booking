@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)']
+      },
       backgroundImage: {
         deskVector: 'url(/images/bgDesk.svg)',
         phoneVector: 'url(/images/bgPhone.svg)',

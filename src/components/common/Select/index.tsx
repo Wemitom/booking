@@ -15,10 +15,12 @@ const Select = ({
   children,
   options,
   renderOptions,
+  indicatorID = 0,
   width = 12
 }: {
   children: JSX.Element;
   options: readonly string[];
+  indicatorID?: number;
   renderOptions?: boolean;
   width?: number;
 }) => {
@@ -27,7 +29,9 @@ const Select = ({
   return (
     <SelectContext.Provider value={{ chosen, setChosen }}>
       <div>
-        {renderOptions && <Options options={options} width={width} />}
+        {renderOptions && (
+          <Options options={options} width={width} indicatorID={indicatorID} />
+        )}
         {children}
       </div>
     </SelectContext.Provider>

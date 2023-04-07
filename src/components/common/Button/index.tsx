@@ -18,7 +18,7 @@ const Button = ({
   return (
     <button
       className={classNames(
-        'text-white p-4 text-center !flex-grow-0',
+        'text-white p-4 text-center !flex-grow-0 font-inter',
         filled ? 'bg-accent' : 'bg-transparent border border-accent',
         sizes[size]
       )}

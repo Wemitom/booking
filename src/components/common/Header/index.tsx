@@ -33,7 +33,7 @@ const Header = () => {
       </nav>
 
       <div className="ml-auto hidden sm:block">
-        <address className="not-italic">8-800-1000-540</address>
+        <address className="font-inter not-italic">8-800-1000-540</address>
         <p className="text-accent">Бесплатно по РФ</p>
       </div>
 
