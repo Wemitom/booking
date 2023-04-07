@@ -278,7 +278,7 @@ const RestaurantsSection = () => {
 
 const Experience = ({ name, src }: { name: string; src: string }) => {
   return (
-    <div className="flex flex-col items-center border border-accent/50 px-20 py-5 2xl:max-w-[30%]">
+    <div className="flex flex-col items-center border border-accent/50 px-16 py-5">
       <Image src={src} alt={name} width={56} height={56} />
       <p className="font-inter font-medium text-white">{name}</p>
     </div>
@@ -301,17 +301,20 @@ const Experineces = () => {
 
 const ExperiencesSection = () => {
   return (
-    <section className="mt-16 px-5 2xl:px-0">
+    <section className="mt-16 px-5 lg:px-0">
       <div className="flex flex-col">
-        <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl 2xl:px-48">
+        <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl lg:px-48">
           <p>ЯРКИЕ ВПЕЧАТЛЕНИЯ</p>
         </h2>
       </div>
 
-      <div className="mt-9 flex flex-col-reverse gap-9 2xl:flex-row 2xl:gap-28">
-        <div>
-          <Image src={experiences} alt="experiences" />
-          <div className="mt-11 2xl:px-48">
+      <div className="mt-9 flex flex-col-reverse gap-9 2xl:flex-row 2xl:gap-24">
+        <div className="2xl:w-1/2">
+          <div className="lg:px-48 2xl:px-0">
+            <Image src={experiences} alt="experiences" className="w-full" />
+          </div>
+
+          <div className="mt-11 lg:px-48 2xl:pl-48 2xl:pr-0">
             <div className="flex items-start gap-4">
               <Image src={compass} alt="compass" />
 
@@ -331,9 +334,24 @@ const ExperiencesSection = () => {
             </div>
           </div>
         </div>
-        <Select options={experiencesVariants} renderOptions width={6}>
-          <Experineces />
-        </Select>
+
+        <div className="lg:px-48 2xl:px-0 2xl:w-1/2">
+          <Select options={experiencesVariants} renderOptions width={6}>
+            <Experineces />
+          </Select>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const SightsSections = () => {
+  return (
+    <section className="mt-16">
+      <div className="flex flex-col">
+        <h2 className="mt-12 px-5 font-inter text-4xl font-bold text-accent md:w-2/3 md:text-6xl lg:px-48">
+          <p>ЗНАКОВЫЕ МЕСТА АЛТАЯ</p>
+        </h2>
       </div>
     </section>
   );
@@ -355,6 +373,7 @@ export default function Home() {
       <SpaSection />
       <RestaurantsSection />
       <ExperiencesSection />
+      <SightsSections />
 
       <Footer />
     </>

@@ -9,7 +9,7 @@ import { variants } from '@/utils/constants';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-14 px-5 py-20 font-inter lg:flex-row lg:gap-40 lg:border-t lg:border-accent/50 lg:px-48">
+    <footer className="flex flex-col gap-14 px-5 py-20 font-inter lg:border-t lg:border-accent/50 lg:px-48 min-[1140px]:flex-row min-[1140px]:gap-40">
       <div className="flex flex-col gap-4 xl:w-1/4">
         <div className="flex flex-row">
           <Image
