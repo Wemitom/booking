@@ -10,7 +10,7 @@ import { variants } from '@/utils/constants';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-14 px-5 py-20 font-inter lg:border-t lg:border-accent/50 lg:px-48 min-[1140px]:flex-row min-[1140px]:gap-40">
+    <footer className="flex flex-col gap-14 px-5 py-20 pb-60 font-inter lg:border-t lg:border-accent/50 lg:px-48 min-[1140px]:flex-row min-[1140px]:gap-40">
       <div className="flex flex-col gap-4 xl:w-1/4">
         <div className="flex flex-row">
           <Image
@@ -105,7 +105,7 @@ const Footer = () => {
               Для удобства гостей
             </li>
             <li className="cursor-pointer text-white" role="link">
-              Экскурсии
+              <Link href="/tours">Экскурсии</Link>
             </li>
             <li className="cursor-pointer text-white" role="link">
               Room-service
@@ -130,7 +130,7 @@ const Footer = () => {
             </li>
 
             <li className="cursor-pointer text-white" role="link">
-              &#34;Сосны&#34;
+              <Link href="/restaurant">&#34;Сосны&#34;</Link>
             </li>
             <li className="cursor-pointer text-white" role="link">
               &#34;Лес и река&#34;
