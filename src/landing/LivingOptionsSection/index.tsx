@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import Button from '@/components/common/Button';
 import Select from '@/components/common/Select';
@@ -9,7 +10,8 @@ import useSelect from '@/utils/hooks/useSelect';
 
 const Preview = () => {
   const { chosen } = useSelect();
-
+  const { push } = useRouter();
+  console.log(encodeURI(variantsPreview[chosen as Variants[number]].fullName));
   return (
     <div className="flex flex-col gap-6 xl:flex-row">
       <div className="flex flex-col items-center xl:relative xl:block">
@@ -21,11 +23,27 @@ const Preview = () => {
           alt={chosen}
           className="my-auto xl:hidden"
         />
-        {variantsPreview[chosen as Variants[number]].description}
+        <div className="font-inter text-white">
+          {variantsPreview[chosen as Variants[number]].description.map(
+            (line, i) => (
+              <p key={'line' + i}>{line}</p>
+            )
+          )}
+        </div>
 
         <div className="xl:absolute xl:bottom-0">
           <div className="mt-8">
-            <Button title="Посмотреть" />
+            <Button
+              title="Посмотреть"
+              onClick={() =>
+                push(
+                  '/' +
+                    encodeURI(
+                      variantsPreview[chosen as Variants[number]].fullName
+                    )
+                )
+              }
+            />
           </div>
           <Controls options={variants} />
         </div>
