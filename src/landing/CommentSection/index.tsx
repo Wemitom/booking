@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import star from 'public/images/star.svg';
 
 import Button from '@/components/common/Button';
@@ -61,6 +62,7 @@ const CommentsSection = () => {
   const [curComment, setCurComment] = useState(0);
   const [width, setWidth] = useState(0);
   const flexRef = useRef<HTMLDivElement | null>(null);
+  const { push } = useRouter();
 
   const handleClick = useCallback(
     (left?: boolean) => {
@@ -125,7 +127,12 @@ const CommentsSection = () => {
 
       <div className="mt-6 px-5 lg:px-48">
         <div className="flex justify-center lg:w-[280px]">
-          <Button title="Больше отзывов" size="full" filled />
+          <Button
+            title="Больше отзывов"
+            size="full"
+            onClick={() => push('/reviews')}
+            filled
+          />
         </div>
       </div>
     </section>

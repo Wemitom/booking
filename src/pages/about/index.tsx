@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 import Button from '@/components/common/Button';
 import FindRoom from '@/components/common/FindRoom';
@@ -10,12 +11,19 @@ const About = () => {
     <>
       <Head>
         <title>Контакты</title>
-
-        <link rel="preload" href="/images/about.png" as="image" />
       </Head>
 
-      <section className="relative min-h-screen w-auto bg-about bg-cover bg-center bg-no-repeat">
+      <section className="relative min-h-screen w-auto">
         <Header />
+
+        <Image
+          priority
+          src="/images/about.png"
+          alt="about_img"
+          className="object-cover"
+          fill
+        />
+
         <h1 className="relative z-20 ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
           КОНТАКТЫ
         </h1>
@@ -61,7 +69,7 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="mb-6 font-inter text-2xl font-bold text-white lg:text-3xl xl:text-4xl">
+          <h3 className="mb-6 font-inter text-xl font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
             WELCOME@GRANDCHALET.RU
           </h3>
           <p className="my-6 text-accent">Задать вопрос, написать отзыв</p>

@@ -32,7 +32,7 @@ const Options = ({
 
   return (
     <div className="relative">
-      <ul className="flex" role="menu">
+      <ul className="flex" role="button">
         {options.map((option) => (
           <li
             className={classNames(

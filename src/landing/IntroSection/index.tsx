@@ -1,10 +1,19 @@
+import Image from 'next/image';
+
 import FindRoom from '@/components/common/FindRoom';
 import Header from '@/components/common/Header';
 
 const IntroSection = () => {
   return (
-    <section className="relative min-h-screen w-auto bg-landingPhone bg-cover bg-center bg-no-repeat sm:bg-landingDesk">
+    <section className="relative min-h-screen w-auto">
       <Header />
+      <Image
+        priority
+        src="/images/landingMainDesk.png"
+        alt="landing_img"
+        className="object-cover"
+        fill
+      />
       <div className="relative z-10 ml-5 mt-4 text-white lg:ml-48">
         <h1 className="text-5xl font-extrabold !leading-snug lg:text-7xl 3xl:text-8xl">
           GRAND

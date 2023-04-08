@@ -22,18 +22,6 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="preload"
-          href="/images/landingMainDesk.png"
-          as="image"
-          media="(min-width: 640px)"
-        />
-        <link
-          rel="preload"
-          href="/images/landingMainPhone.png"
-          as="image"
-          media="(max-width: 639px)"
-        />
       </Head>
 
       <IntroSection />

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import mastercard from 'public/images/mastercard.svg';
 import mir from 'public/images/mir.svg';
 import sbp from 'public/images/sbp.svg';
@@ -181,7 +182,7 @@ const Footer = () => {
               Карта территории
             </li>
             <li className="cursor-pointer text-white" role="link">
-              Контакты
+              <Link href="/about">Контакты</Link>
             </li>
           </ul>
         </Masonry>

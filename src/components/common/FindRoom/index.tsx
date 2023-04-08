@@ -22,7 +22,9 @@ export default function FindRoom() {
         <div className="flex flex-col items-start 2xl:flex-row 2xl:items-center 2xl:shadow-[4px_4px_4px_rgba(0,0,0,0.1)] [&>*]:w-full [&>*]:grow [&>*]:2xl:mr-4">
           <div className="flex">
             <div className="grow">
-              <label className="font-light">Заезд</label>
+              <label htmlFor="startDate" className="font-light">
+                Заезд
+              </label>
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
@@ -40,9 +42,12 @@ export default function FindRoom() {
 
           <div className="flex">
             <div className="grow">
-              <label className="font-light">Выезд</label>
+              <label htmlFor="endDate" className="font-light">
+                Выезд
+              </label>
               <DatePicker
                 selected={endDate}
+                name="endDate"
                 onChange={(date) => setEndDate(date)}
                 className="font-inter font-semibold"
               />
@@ -57,8 +62,10 @@ export default function FindRoom() {
 
           <div className="flex">
             <div className="flex grow flex-col">
-              <label className="font-light">Гости</label>
-              <input />
+              <label htmlFor="guests" className="font-light">
+                Гости
+              </label>
+              <input name="guests" />
             </div>
             <Image
               priority

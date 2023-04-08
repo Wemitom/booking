@@ -9,11 +9,13 @@ const sizes: Record<Sizes, string> = {
 const Button = ({
   title,
   size = 'normal',
-  filled
+  filled,
+  onClick
 }: {
   title: string;
   size?: Sizes;
   filled?: boolean;
+  onClick?: () => void;
 }) => {
   return (
     <button
@@ -22,6 +24,7 @@ const Button = ({
         filled ? 'bg-accent' : 'bg-transparent border border-accent',
         sizes[size]
       )}
+      onClick={onClick}
     >
       {title}
     </button>
