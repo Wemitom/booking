@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="relative z-20 flex w-full flex-row items-center px-7 py-[34px] text-white">
+    <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] text-white sm:h-[140px]">
       <div className="flex flex-row">
         <Image
           priority
