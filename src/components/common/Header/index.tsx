@@ -26,11 +26,11 @@ const Header = () => {
       <nav className="ml-16 hidden flex-row gap-14 xl:flex">
         <p>Проживание</p>
 
-        <p>Ресторан &#34;Сосны&#34;</p>
+        <Link href="/restaurant">Ресторан &#34;Сосны&#34;</Link>
 
         <p>Горнолыжный отдых</p>
 
-        <Link href={'/about'}>Контакты</Link>
+        <Link href="/about">Контакты</Link>
       </nav>
 
       <div className="ml-auto hidden sm:block">
