@@ -11,7 +11,7 @@ import useSelect from '@/utils/hooks/useSelect';
 const Preview = () => {
   const { chosen } = useSelect();
   const { push } = useRouter();
-  console.log(encodeURI(variantsPreview[chosen as Variants[number]].fullName));
+
   return (
     <div className="flex flex-col gap-6 xl:flex-row">
       <div className="flex flex-col items-center xl:relative xl:block">
