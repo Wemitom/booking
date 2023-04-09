@@ -6,7 +6,7 @@ import sbp from 'public/images/sbp.svg';
 import visa from 'public/images/visa.svg';
 import Masonry from 'react-masonry-css';
 
-import { variants } from '@/utils/constants';
+import { variants, variantsPreview } from '@/utils/constants';
 
 const Footer = () => {
   return (
@@ -91,7 +91,9 @@ const Footer = () => {
                 className="cursor-pointer text-white"
                 role="link"
               >
-                {variant}
+                <Link href={'/' + encodeURI(variantsPreview[variant].fullName)}>
+                  {variant}
+                </Link>
               </li>
             ))}
           </ul>
