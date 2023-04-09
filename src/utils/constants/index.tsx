@@ -244,3 +244,58 @@ export const tours: Record<
     }
   ]
 };
+
+export const links = [
+  {
+    name: 'Проживание',
+    content: variants.map((variant) => {
+      return {
+        text: variant,
+        link: '/' + encodeURI(variantsPreview[variant].fullName)
+      };
+    })
+  },
+  {
+    name: 'Услуги',
+    content: [
+      {
+        text: 'Для удобства гостей',
+        link: null
+      },
+      { text: 'Экскурсии', link: '/tours' },
+      { text: 'Room-service', link: null },
+      { text: 'Горнолыжный отдых', link: null },
+      { text: 'Прокат', link: null },
+      { text: 'Трансфер', link: null },
+      { text: 'Детский клуб', link: null }
+    ]
+  },
+  {
+    name: 'Рестораны',
+    content: [
+      { text: '"Сосны"', link: '/restaurants' },
+      { text: '"Лес и река"', link: null },
+      { text: '"Хвоя"', link: null },
+      { text: 'Бар "Кедр и пар"', link: null },
+      { text: '"Огонь"', link: null }
+    ]
+  },
+  {
+    name: 'Забота о гостях и экологии',
+    content: [
+      { text: 'Особенности строительства', link: null },
+      { text: 'Использование ресурсов', link: null },
+      { text: 'Экологически ответственное и здоровое питание', link: null },
+      { text: 'Поддержка местных сообществ', link: null }
+    ]
+  },
+  {
+    name: 'Туркомплекс',
+    content: [
+      { text: 'Отзывы', link: '/reviews' },
+      { text: 'Оплата проживания', link: null },
+      { text: 'Карта территории', link: null },
+      { text: 'Контакты', link: '/about' }
+    ]
+  }
+];

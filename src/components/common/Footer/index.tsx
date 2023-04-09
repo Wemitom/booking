@@ -6,7 +6,8 @@ import sbp from 'public/images/sbp.svg';
 import visa from 'public/images/visa.svg';
 import Masonry from 'react-masonry-css';
 
-import { variants, variantsPreview } from '@/utils/constants';
+import { links } from '@/utils/constants';
+import { classNames } from '@/utils/functions';
 
 const Footer = () => {
   return (
@@ -80,113 +81,26 @@ const Footer = () => {
           className="flex"
           columnClassName="p-6 [&>*]:mb-6"
         >
-          <ul className="leading-loose">
-            <li>
-              <h4 className="text-accent text-xl font-semibold">Проживание</h4>
-            </li>
-
-            {variants.map((variant) => (
-              <li
-                key={variant}
-                className="cursor-pointer text-white"
-                role="link"
-              >
-                <Link href={'/' + encodeURI(variantsPreview[variant].fullName)}>
-                  {variant}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <ul className="leading-loose">
-            <li>
-              <h4 className="text-accent text-xl font-semibold">Услуги</h4>
-            </li>
-
-            <li className="cursor-pointer text-white" role="link">
-              Для удобства гостей
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              <Link href="/tours">Экскурсии</Link>
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Room-service
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Горнолыжный отдых
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Прокат
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Трансфер
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Детский клуб
-            </li>
-          </ul>
-
-          <ul className="leading-loose">
-            <li>
-              <h4 className="text-accent text-xl font-semibold">Рестораны</h4>
-            </li>
-
-            <li className="cursor-pointer text-white" role="link">
-              <Link href="/restaurant">&#34;Сосны&#34;</Link>
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              &#34;Лес и река&#34;
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              &#34;Хвоя&#34;
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Бар &#34;Керд и пар&#34;
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              &#34;Огонь&#34;
-            </li>
-          </ul>
-
-          <ul className="leading-loose">
-            <li>
-              <h4 className="text-accent text-xl font-semibold">
-                Забота о гостях и экологии
-              </h4>
-            </li>
-
-            <li className="cursor-pointer text-white" role="link">
-              Особенности строительства
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              использование ресурсов
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Экологически ответственное и здоровое питание
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Поддержка местных сообществ
-            </li>
-          </ul>
-
-          <ul className="leading-loose">
-            <li>
-              <h4 className="text-accent text-xl font-semibold">Туркомплекс</h4>
-            </li>
-
-            <li className="cursor-pointer text-white" role="link">
-              <Link href="/reviews">Отзывы</Link>
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Оплата проживания
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              Карта территории
-            </li>
-            <li className="cursor-pointer text-white" role="link">
-              <Link href="/about">Контакты</Link>
-            </li>
-          </ul>
+          {links.map((link) => (
+            <ul key={link.name}>
+              <h5 className="text-accent text-xl font-semibold">{link.name}</h5>
+              {link.content.map((item) => (
+                <li
+                  key={item.text}
+                  className={classNames(
+                    'mb-3',
+                    item.link ? 'cursor-pointer text-white' : 'text-white/50'
+                  )}
+                >
+                  {item.link ? (
+                    <Link href={item.link}>{item.text}</Link>
+                  ) : (
+                    item.text
+                  )}
+                </li>
+              ))}
+            </ul>
+          ))}
         </Masonry>
       </nav>
     </footer>
