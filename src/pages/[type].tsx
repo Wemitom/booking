@@ -2,6 +2,7 @@ import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image, { StaticImageData } from 'next/image';
 
+import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
@@ -16,11 +17,15 @@ import { Variants, variants, variantsPreview } from '@/utils/constants';
 export default function LivingOption({
   description,
   src,
-  fullName
+  fullName,
+  size,
+  cost
 }: {
   description: string[];
   src: StaticImageData;
   fullName: string;
+  size: number;
+  cost: number;
 }) {
   return (
     <>
@@ -50,6 +55,15 @@ export default function LivingOption({
                     {line}
                   </DescriptionSecondary>
                 ))}
+              </div>
+
+              <div className="mt-3 flex gap-3">
+                <Badge>
+                  <>{size} м2</>
+                </Badge>
+                <Badge>
+                  <>от {cost}Р</>
+                </Badge>
               </div>
             </div>
 

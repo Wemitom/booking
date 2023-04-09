@@ -6,7 +6,13 @@ export const variants = ['Мал. коттедж', 'Бол. коттедж'] as 
 export type Variants = typeof variants;
 export const variantsPreview: Record<
   Variants[number],
-  { description: string[]; src: StaticImageData; fullName: string }
+  {
+    description: string[];
+    src: StaticImageData;
+    fullName: string;
+    size: number;
+    cost: number;
+  }
 > = {
   'Мал. коттедж': {
     description: [
@@ -19,7 +25,9 @@ export const variantsPreview: Record<
       '•Душ; туалет Каждому гостю предоставляется комплект полотенец'
     ],
     src: small,
-    fullName: 'Маленький коттедж'
+    fullName: 'Маленький коттедж',
+    size: 18,
+    cost: 10000
   },
   'Бол. коттедж': {
     description: [
@@ -35,7 +43,9 @@ export const variantsPreview: Record<
       'Каждому гостю предоставляется комплект полотенец'
     ],
     src: big,
-    fullName: 'Большой коттедж'
+    fullName: 'Большой коттедж',
+    size: 18,
+    cost: 10000
   }
 };
 

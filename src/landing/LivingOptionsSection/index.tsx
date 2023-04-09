@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import decorator from 'public/images/decorator1.svg';
 
+import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Select from '@/components/common/Select';
 import Controls from '@/components/common/Select/Controls';
@@ -21,11 +22,32 @@ const Preview = () => {
         <div className="my-6 mr-auto">
           <Options options={variants} width={9} indicatorID={1} />
         </div>
-        <Image
-          src={variantsPreview[chosen as Variants[number]].src}
-          alt={chosen}
-          className="my-auto xl:hidden"
-        />
+
+        <div className="flex flex-col-reverse xl:flex-row">
+          <Image
+            src={variantsPreview[chosen as Variants[number]].src}
+            alt={chosen}
+            className="my-auto xl:hidden"
+          />
+
+          <div>
+            <h3 className="my-3 text-3xl font-extrabold text-white md:text-4xl xl:text-5xl">
+              {variantsPreview[
+                chosen as Variants[number]
+              ].fullName.toUpperCase()}
+            </h3>
+
+            <div className="mb-3 flex gap-3">
+              <Badge>
+                <>{variantsPreview[chosen as Variants[number]].size} м2</>
+              </Badge>
+              <Badge>
+                <>от {variantsPreview[chosen as Variants[number]].cost}Р</>
+              </Badge>
+            </div>
+          </div>
+        </div>
+
         <div>
           {variantsPreview[chosen as Variants[number]].description.map(
             (line, i) => (
@@ -36,20 +58,18 @@ const Preview = () => {
           )}
         </div>
 
-        <div className="xl:absolute xl:bottom-0">
-          <div className="mt-8">
-            <Button
-              title="Посмотреть"
-              onClick={() =>
-                push(
-                  '/' +
-                    encodeURI(
-                      variantsPreview[chosen as Variants[number]].fullName
-                    )
-                )
-              }
-            />
-          </div>
+        <div className="mt-8">
+          <Button
+            title="Посмотреть"
+            onClick={() =>
+              push(
+                '/' +
+                  encodeURI(
+                    variantsPreview[chosen as Variants[number]].fullName
+                  )
+              )
+            }
+          />
           <Controls options={variants} />
         </div>
       </div>
@@ -57,7 +77,7 @@ const Preview = () => {
       <Image
         src={variantsPreview[chosen as Variants[number]].src}
         alt={chosen}
-        className="hidden h-[720px] w-1/2 xl:block"
+        className="hidden w-1/2 xl:block"
       />
     </div>
   );
