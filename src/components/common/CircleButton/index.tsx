@@ -10,7 +10,7 @@ const CircleButton = ({
 }) => {
   return (
     <button
-      className="flex h-24 w-24 items-center justify-center rounded-full border border-accent"
+      className="border-accent hover:border-accent/60 flex h-24 w-24 items-center justify-center rounded-full border transition-colors"
       onClick={handleClick}
     >
       <Image
