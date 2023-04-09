@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import decorator from 'public/images/decorator1.svg';
 
 import Button from '@/components/common/Button';
 import Select from '@/components/common/Select';
@@ -64,8 +65,13 @@ const Preview = () => {
 
 const LivingOptionsSection = () => {
   return (
-    <section className="mt-16 px-5 lg:px-48">
-      <div className="flex flex-col">
+    <section className="relative mt-16 px-5 lg:mt-32 lg:px-48">
+      <Image
+        src={decorator}
+        alt="decorator_1"
+        className="absolute -left-52 -top-52 -z-10 hidden w-full scale-50 2xl:block"
+      />
+      <div className="my-12">
         <SectionTitle>
           <span>ВАРИАНТЫ</span>
           <br />

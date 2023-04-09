@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header = () => {
+  const { push } = useRouter();
+
   return (
     <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] font-semibold text-white sm:h-[140px]">
-      <div className="flex flex-row">
+      <div className="flex cursor-pointer flex-row" onClick={() => push('/')}>
         <Image
           priority
           className="h-auto w-[38px] sm:w-[72px]"

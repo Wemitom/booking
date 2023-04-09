@@ -54,7 +54,7 @@ const ExperiencesSection = () => {
               <Image src={compass} alt="compass" />
 
               <div>
-                <div className="mb-3 h-12 align-middle">
+                <div className="mb-12 h-12 align-middle">
                   <SecondaryTitle>
                     Рядом с туркомплексом Grand Chalet Altay
                   </SecondaryTitle>

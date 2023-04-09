@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Image from 'next/image';
+import decorator from 'public/images/decorator2.svg';
 import location from 'public/images/locationHollow.svg';
 
 import CircleButton from '@/components/common/CircleButton';
@@ -21,7 +22,7 @@ const SightsSections = () => {
   };
 
   return (
-    <section className="mt-16 overflow-hidden">
+    <section className="relative mt-16 overflow-hidden">
       <div className="px-5 md:w-2/3 lg:px-48">
         <SectionTitle>ЗНАКОВЫЕ МЕСТА АЛТАЯ</SectionTitle>
       </div>
@@ -32,6 +33,12 @@ const SightsSections = () => {
           {curPos.toUpperCase()}
         </p>
       </div>
+
+      <Image
+        src={decorator}
+        alt="decorator_2"
+        className="absolute left-0 top-20 -z-10 hidden 2xl:block"
+      />
 
       <div className="flex flex-col-reverse gap-5 px-5 lg:h-96 lg:flex-row lg:px-48">
         <div>
@@ -54,7 +61,7 @@ const SightsSections = () => {
         />
       </div>
 
-      <div className="relative mt-32 flex h-12 w-full items-center">
+      <div className="relative mb-6 mt-32 flex h-12 w-full items-center">
         <div className="bg-accent absolute top-3 h-px w-[999999px]" />
         {sights.map((sight, i) => (
           <div
