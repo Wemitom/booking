@@ -56,7 +56,7 @@ const Preview = () => {
       <Image
         src={variantsPreview[chosen as Variants[number]].src}
         alt={chosen}
-        className="hidden h-[680px] w-1/2 xl:block"
+        className="hidden h-[720px] w-1/2 xl:block"
       />
     </div>
   );

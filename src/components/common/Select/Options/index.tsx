@@ -36,7 +36,7 @@ const Options = ({
         {options.map((option) => (
           <li
             className={classNames(
-              'px-4 text-center border-b border-accent/50 font-inter lg:text-lg 2xl:text-xl',
+              'px-4 text-center border-b border-accent/50 font-inter',
               chosen === option
                 ? 'text-white'
                 : 'cursor-pointer text-white/50 transition-colors'
