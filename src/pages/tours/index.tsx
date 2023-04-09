@@ -7,6 +7,9 @@ import FindRoom from '@/components/common/FindRoom';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 import Select from '@/components/common/Select';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
+import MainTitle from '@/components/common/typography/MainTitle';
+import SecondaryTitle from '@/components/common/typography/SecondaryTitle';
 import { TourType, tourTypes, tours } from '@/utils/constants';
 import useSelect from '@/utils/hooks/useSelect';
 
@@ -28,7 +31,7 @@ const Tour = ({
       <Image src={src} alt={name} className="lg:w-64" />
 
       <div className="flex flex-col gap-3">
-        <h3 className="font-inter text-3xl font-bold text-accent">{name}</h3>
+        <SecondaryTitle>{name}</SecondaryTitle>
 
         <div className="flex flex-row gap-3">
           <Badge>
@@ -39,12 +42,12 @@ const Tour = ({
           </Badge>
         </div>
 
-        <p className="font-inter text-white">{description}</p>
+        <DescriptionSecondary>{description}</DescriptionSecondary>
       </div>
 
       <div className="flex justify-center lg:flex-col">
         <Button title="Забронировать" filled />
-        <p className="mt-3 hidden font-inter font-semibold text-white lg:block">
+        <p className="font-inter mt-3 hidden font-semibold text-white lg:block">
           Цена рассчитываються индивидуально
         </p>
       </div>
@@ -86,9 +89,9 @@ export default function ToursPage() {
           fill
         />
 
-        <h1 className="relative z-20 ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
-          ЭКСКУРСИИ
-        </h1>
+        <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
+          <MainTitle>ЭКСКУРСИИ</MainTitle>
+        </div>
 
         <FindRoom />
 
