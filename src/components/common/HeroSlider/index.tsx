@@ -27,6 +27,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
   const [curSlide, setCurSlide] = useState(0);
   const [imgWidth, setImgWidth] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const ref = useRef<HTMLImageElement | null>(null);
   const refContainer = useRef<HTMLDivElement | null>(null);
@@ -38,7 +39,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
         setContainerWidth(refContainer.current.clientWidth);
     };
 
-    if (window) {
+    if (window && imageLoaded) {
       window.addEventListener('resize', changeSize);
       changeSize();
     }
@@ -46,7 +47,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
     return () => {
       window.removeEventListener('resize', changeSize);
     };
-  }, []);
+  }, [imageLoaded]);
 
   return (
     <HeroSliderContext.Provider
@@ -77,6 +78,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
               ref={ref}
               alt={'slide_' + i}
               key={'slide_' + i}
+              onLoad={() => setImageLoaded(true)}
               className="-translate-x-1/2"
             />
           ))}
