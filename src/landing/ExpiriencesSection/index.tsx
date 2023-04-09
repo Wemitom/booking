@@ -3,6 +3,9 @@ import compass from 'public/images/compass.svg';
 import experiences from 'public/images/experiences.png';
 
 import Select from '@/components/common/Select';
+import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import SecondaryTitle from '@/components/common/typography/SecondaryTitle';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 import {
   ExperiencesVariants,
   experiencesNames,
@@ -12,9 +15,9 @@ import useSelect from '@/utils/hooks/useSelect';
 
 const Experience = ({ name, src }: { name: string; src: string }) => {
   return (
-    <div className="flex flex-col items-center border border-accent/50 px-16 py-5">
+    <div className="border-accent/50 flex flex-col items-center border px-16 py-5">
       <Image src={src} alt={name} width={56} height={56} />
-      <p className="font-inter font-medium text-white">{name}</p>
+      <p className="font-inter text-sm font-medium text-white">{name}</p>
     </div>
   );
 };
@@ -36,9 +39,9 @@ const Experineces = () => {
 const ExperiencesSection = () => {
   return (
     <section className="mt-16 px-5 lg:px-0">
-      <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl lg:px-48">
-        <p>ЯРКИЕ ВПЕЧАТЛЕНИЯ</p>
-      </h2>
+      <div className="lg:px-48">
+        <SectionTitle>ЯРКИЕ ВПЕЧАТЛЕНИЯ</SectionTitle>
+      </div>
 
       <div className="mt-9 flex flex-col-reverse gap-9 2xl:flex-row 2xl:gap-24">
         <div className="2xl:w-1/2">
@@ -51,17 +54,19 @@ const ExperiencesSection = () => {
               <Image src={compass} alt="compass" />
 
               <div>
-                <h3 className="mb-3 h-9 align-middle font-semibold text-accent">
-                  Рядом с туркомплексом Grand Chalet Altay
-                </h3>
-                <p className="font-medium text-white">
+                <div className="mb-3 h-12 align-middle">
+                  <SecondaryTitle>
+                    Рядом с туркомплексом Grand Chalet Altay
+                  </SecondaryTitle>
+                </div>
+                <DescriptionMain>
                   Вас ожидают невероятные спуски по горам Алтая, заснеженные
                   пики и конечно отдых в приятной компании единомышленников. На
                   горно-лыжных комплексах Алтая доступны склоны разного уровня
                   сложности – как для начинающих, так и для продвинутых, а ваши
                   дети после занятий с профессиональным тренером начнут кататься
                   как взрослые.
-                </p>
+                </DescriptionMain>
               </div>
             </div>
           </div>

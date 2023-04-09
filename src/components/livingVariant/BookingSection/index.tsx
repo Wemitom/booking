@@ -3,25 +3,30 @@ import React from 'react';
 import Image from 'next/image';
 
 import Button from '@/components/common/Button';
+import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 
 const BookingSection = () => {
   return (
     <section className="mt-12 px-5 lg:px-48">
-      <h2 className="my-12 font-inter text-4xl font-bold text-accent md:text-6xl xl:hidden">
-        ЗАБРОНИРУЙТЕ ЭТОТ НОМЕР
-      </h2>
+      <div className="mb-12 xl:hidden">
+        <SectionTitle>ЗАБРОНИРУЙТЕ ЭТОТ НОМЕР</SectionTitle>
+      </div>
       <div className="flex flex-col-reverse justify-between gap-16 lg:flex-row">
         <div>
-          <h2 className="my-12 hidden font-inter text-4xl font-bold text-accent md:text-6xl xl:block">
-            ЗАБРОНИРУЙТЕ ЭТОТ НОМЕР
-          </h2>
-          <p className="mt-5 text-xl text-white xl:text-2xl">
-            Оставьте заявку и мы перезвоним вам в течение часа.
-          </p>
+          <div className="mb-12 hidden xl:block">
+            <SectionTitle>ЗАБРОНИРУЙТЕ ЭТОТ НОМЕР</SectionTitle>
+          </div>
+
+          <div className="mb-6">
+            <DescriptionMain>
+              Оставьте заявку и мы перезвоним вам в течение часа.
+            </DescriptionMain>
+          </div>
 
           <Button title="Забронировать" size="full" filled />
 
-          <div className="my-6 font-inter text-white">
+          <div className="font-inter my-6 text-white">
             <p className="my-6 font-medium xl:text-xl">Включенные услуги:</p>
 
             <ul className="[&>li]:list-inside [&>li]:list-disc">

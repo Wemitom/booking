@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] text-white sm:h-[140px]">
+    <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] font-semibold text-white sm:h-[140px]">
       <div className="flex flex-row">
         <Image
           priority
@@ -34,8 +34,10 @@ const Header = () => {
       </nav>
 
       <div className="ml-auto hidden sm:block">
-        <address className="font-inter not-italic">8-800-1000-540</address>
-        <p className="text-accent">Бесплатно по РФ</p>
+        <address className="font-inter font-normal not-italic">
+          8-800-1000-540
+        </address>
+        <p className="text-accent font-normal">Бесплатно по РФ</p>
       </div>
 
       <button className="ml-auto sm:ml-9">

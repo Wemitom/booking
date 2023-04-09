@@ -4,6 +4,8 @@ import Image from 'next/image';
 import location from 'public/images/locationHollow.svg';
 
 import CircleButton from '@/components/common/CircleButton';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 import { Sights, sights, sightsShow } from '@/utils/constants';
 import { classNames } from '@/utils/functions';
 
@@ -20,18 +22,24 @@ const SightsSections = () => {
 
   return (
     <section className="mt-16 overflow-hidden">
-      <h2 className="mt-12 px-5 font-inter text-4xl font-bold text-accent md:w-2/3 md:text-6xl lg:px-48">
-        <p>ЗНАКОВЫЕ МЕСТА АЛТАЯ</p>
-      </h2>
-
-      <div className="mt-8 flex flex-row items-center gap-5 px-5 lg:px-48">
-        <div className="hidden h-0 w-[45px] border-2 border-accent lg:block" />
-        <p className="text-3xl font-bold text-white">{curPos.toUpperCase()}</p>
+      <div className="px-5 md:w-2/3 lg:px-48">
+        <SectionTitle>ЗНАКОВЫЕ МЕСТА АЛТАЯ</SectionTitle>
       </div>
 
-      <div className="flex flex-col-reverse gap-5 px-5 font-inter text-white lg:h-96 lg:flex-row lg:px-48">
+      <div className="mt-8 flex flex-row items-center gap-5 px-5 lg:px-48">
+        <div className="border-accent hidden h-0 w-[45px] border-2 lg:block" />
+        <p className="my-2 text-3xl font-bold text-white">
+          {curPos.toUpperCase()}
+        </p>
+      </div>
+
+      <div className="flex flex-col-reverse gap-5 px-5 lg:h-96 lg:flex-row lg:px-48">
         <div>
-          <p className="pt-6">{sightsShow[curPos].description}</p>
+          <div className="pt-6">
+            <DescriptionSecondary>
+              {sightsShow[curPos].description}
+            </DescriptionSecondary>
+          </div>
 
           <div className="mt-12 flex justify-center gap-20 lg:justify-normal">
             <CircleButton handleClick={() => handleClick(true)} left />
@@ -47,7 +55,7 @@ const SightsSections = () => {
       </div>
 
       <div className="relative mt-32 flex h-12 w-full items-center">
-        <div className="absolute top-3 h-px w-[999999px] bg-accent" />
+        <div className="bg-accent absolute top-3 h-px w-[999999px]" />
         {sights.map((sight, i) => (
           <div
             key={sight}

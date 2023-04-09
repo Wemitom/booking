@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import star from 'public/images/star.svg';
 
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
 import { classNames, formatDate } from '@/utils/functions';
 
 const Review = ({
@@ -56,7 +57,7 @@ const Review = ({
         </p>
       </div>
 
-      <p className="mt-8 font-inter text-white">{comment}</p>
+      <DescriptionSecondary>{comment}</DescriptionSecondary>
     </div>
   );
 };

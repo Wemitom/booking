@@ -2,6 +2,8 @@ import Image from 'next/image';
 import landingTour from 'public/images/landingTour.png';
 
 import Button from '@/components/common/Button';
+import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 
 const TourSection = () => {
   return (
@@ -14,17 +16,20 @@ const TourSection = () => {
         />
 
         <div className="flex flex-col">
-          <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl">
+          <SectionTitle>
             <span>ТУРКОМПЛЕКС</span>
             <br />
             <span className="2xl:ml-20">НА БЕРЕГУ КАТУНИ</span>
-          </h2>
+          </SectionTitle>
 
-          <p className="mt-7 text-white 2xl:ml-20">
-            В сосновом бору на берегу реки Ока, расположилась уютная база отдыха
-            «Крутой Яр». Отдыхающих ждет чистый воздух и уютные одноэтажные
-            бревенчатые домики, прекрасное место и для любителей рыбалки.
-          </p>
+          <div className="mt-7 2xl:ml-20">
+            <DescriptionMain>
+              В сосновом бору на берегу реки Ока, расположилась уютная база
+              отдыха «Крутой Яр». Отдыхающих ждет чистый воздух и уютные
+              одноэтажные бревенчатые домики, прекрасное место и для любителей
+              рыбалки.
+            </DescriptionMain>
+          </div>
 
           <div className="mb-4 mt-8 flex grow flex-col justify-between gap-6 lg:mt-auto lg:grow-0 lg:flex-row lg:items-center lg:gap-0 2xl:ml-20 [&>button]:w-full lg:[&>button]:w-[280px]">
             <Button title="Карта туркомплекса" />

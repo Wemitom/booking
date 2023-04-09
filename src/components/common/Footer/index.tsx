@@ -10,7 +10,7 @@ import { variants } from '@/utils/constants';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-14 px-5 py-20 pb-60 font-inter lg:border-t lg:border-accent/50 lg:px-48 min-[1140px]:flex-row min-[1140px]:gap-40">
+    <footer className="font-inter lg:border-accent/50 flex flex-col gap-14 px-5 py-20 pb-60 lg:border-t lg:px-48 min-[1140px]:flex-row min-[1140px]:gap-40">
       <div className="flex flex-col gap-4 xl:w-1/4">
         <div className="flex flex-row">
           <Image
@@ -82,7 +82,7 @@ const Footer = () => {
         >
           <ul className="leading-loose">
             <li>
-              <h4 className="text-xl font-semibold text-accent">Проживание</h4>
+              <h4 className="text-accent text-xl font-semibold">Проживание</h4>
             </li>
 
             {variants.map((variant) => (
@@ -98,7 +98,7 @@ const Footer = () => {
 
           <ul className="leading-loose">
             <li>
-              <h4 className="text-xl font-semibold text-accent">Услуги</h4>
+              <h4 className="text-accent text-xl font-semibold">Услуги</h4>
             </li>
 
             <li className="cursor-pointer text-white" role="link">
@@ -126,7 +126,7 @@ const Footer = () => {
 
           <ul className="leading-loose">
             <li>
-              <h4 className="text-xl font-semibold text-accent">Рестораны</h4>
+              <h4 className="text-accent text-xl font-semibold">Рестораны</h4>
             </li>
 
             <li className="cursor-pointer text-white" role="link">
@@ -148,7 +148,7 @@ const Footer = () => {
 
           <ul className="leading-loose">
             <li>
-              <h4 className="text-xl font-semibold text-accent">
+              <h4 className="text-accent text-xl font-semibold">
                 Забота о гостях и экологии
               </h4>
             </li>
@@ -169,11 +169,11 @@ const Footer = () => {
 
           <ul className="leading-loose">
             <li>
-              <h4 className="text-xl font-semibold text-accent">Туркомплекс</h4>
+              <h4 className="text-accent text-xl font-semibold">Туркомплекс</h4>
             </li>
 
             <li className="cursor-pointer text-white" role="link">
-              Отзывы
+              <Link href="/reviews">Отзывы</Link>
             </li>
             <li className="cursor-pointer text-white" role="link">
               Оплата проживания

@@ -6,6 +6,8 @@ import Button from '@/components/common/Button';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 import HeroSlider from '@/components/common/HeroSlider';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
+import MainTitle from '@/components/common/typography/MainTitle';
 import BookingSection from '@/components/livingVariant/BookingSection';
 import FeaturesSection from '@/components/livingVariant/FeaturesSection';
 import OtherSuitSection from '@/components/livingVariant/OtherSuitSection';
@@ -40,13 +42,13 @@ export default function LivingOption({
         <div className="relative z-20 mx-5 mt-4 lg:mx-48 lg:mt-12">
           <div className="flex flex-col gap-12 xl:flex-row">
             <div>
-              <h1 className="text-5xl font-extrabold !leading-snug text-white lg:text-7xl 3xl:text-8xl">
-                {fullName.toUpperCase()}
-              </h1>
+              <MainTitle>{fullName.toUpperCase()}</MainTitle>
 
-              <div className="mt-6 font-inter text-white">
+              <div className="mt-6">
                 {description.map((line, i) => (
-                  <p key={'line_' + i}>{line}</p>
+                  <DescriptionSecondary key={'line_' + i}>
+                    {line}
+                  </DescriptionSecondary>
                 ))}
               </div>
             </div>
@@ -64,7 +66,7 @@ export default function LivingOption({
                 /> */}
               </div>
 
-              <div className="my-6 hidden font-inter xl:block">
+              <div className="font-inter my-6 hidden xl:block">
                 <p className="my-6 font-medium">Включенные услуги:</p>
 
                 <ul className="[&>li]:list-inside [&>li]:list-disc">

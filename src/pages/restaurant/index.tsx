@@ -7,6 +7,8 @@ import FindRoom from '@/components/common/FindRoom';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 import HeroSlider from '@/components/common/HeroSlider';
+import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import MainTitle from '@/components/common/typography/MainTitle';
 
 export default function Restaurant() {
   return (
@@ -26,9 +28,9 @@ export default function Restaurant() {
           fill
         />
 
-        <h1 className="relative z-20 ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
-          РЕСТОРАН &laquo;СОСНЫ&raquo;
-        </h1>
+        <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
+          <MainTitle>РЕСТОРАН &laquo;СОСНЫ&raquo;</MainTitle>
+        </div>
 
         <FindRoom />
 
@@ -45,24 +47,24 @@ export default function Restaurant() {
       <section className="mt-12 px-5 lg:px-48">
         <div className="flex flex-col gap-12 lg:flex-row">
           <div className="font-medium text-white">
-            <p>
+            <DescriptionMain>
               Знакомство с Алтайским краем будет неполным, если вы не оценили
               кулинарные шедевры местной кухни. Панорамный ресторан авторской
               кухни «Сосны» расположен на 1 этаже отеля и предлагает своим
               гостям не только гастрономическое путешествие, но и завораживающие
               виды алтайского пейзажа. Здесь начинается каждое утро для гостей
               Grand Chalet Altay.
-            </p>
-            <p>
+            </DescriptionMain>
+            <DescriptionMain>
               Ежедневно на завтраке подают ароматную выпечку, воздушные сырники
               с ягодами, свежие фрукты и ароматный кофе. Здесь мы создаем
               хорошее настроение на весь оставшийся день.
-            </p>
+            </DescriptionMain>
           </div>
 
-          <div className="grow bg-secondary px-8 pb-7 pt-14 text-white">
+          <div className="bg-secondary flex h-fit flex-col justify-end px-8 pb-7 pt-14 text-white">
             <h4 className="font-extrabold">Завтрак</h4>
-            <p className="whitespace-nowrap">
+            <p className="lg:whitespace-nowrap">
               &laquo;Шведский стол&raquo; - Ежедневно с 7 до 11
             </p>
             <h4 className="font-extrabold">Обед и ужин</h4>

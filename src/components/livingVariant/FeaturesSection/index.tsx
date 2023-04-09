@@ -2,6 +2,9 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import SectionTitle from '@/components/common/typography/SectionTitle';
+
 const Feature = ({
   src,
   title,
@@ -14,12 +17,12 @@ const Feature = ({
   return (
     <div className="text-white">
       <Image src={src} alt={title} width={700} height={429} />
-      <h3 className="my-6 text-xl font-semibold">{title}</h3>
+      <h3 className="my-6 text-2xl font-semibold lg:text-3xl xl:text-4xl">
+        {title}
+      </h3>
 
       {description.map((line, i) => (
-        <p key={'line_' + i} className="font-medium 3xl:text-2xl">
-          {line}
-        </p>
+        <DescriptionMain key={'line_' + i}>{line}</DescriptionMain>
       ))}
     </div>
   );
@@ -28,11 +31,9 @@ const Feature = ({
 const FeaturesSection = () => {
   return (
     <section className="px-5 lg:px-48">
-      <h2 className="my-12 font-inter text-4xl font-bold text-accent md:text-6xl">
-        ОСОБЕННОСТИ
-      </h2>
+      <SectionTitle>ОСОБЕННОСТИ</SectionTitle>
 
-      <div className="flex flex-col gap-16 lg:flex-row">
+      <div className="mt-12 flex flex-col gap-16 lg:flex-row">
         <Feature
           src="/images/small.png"
           title="ВИД НА РЕКУ"

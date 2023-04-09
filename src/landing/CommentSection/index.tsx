@@ -6,6 +6,8 @@ import star from 'public/images/star.svg';
 
 import Button from '@/components/common/Button';
 import CircleButton from '@/components/common/CircleButton';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 import { comments } from '@/utils/constants';
 import { formatDate } from '@/utils/functions';
 
@@ -23,8 +25,8 @@ const Comment = ({
   src: string;
 }) => {
   return (
-    <div className="w-80 bg-secondary py-5 pl-8 pr-3 min-[450px]:w-96 min-[520px]:w-[28rem] lg:h-[38rem] lg:w-[36rem] lg:px-16 lg:py-11">
-      <div className="flex flex-row">
+    <div className="bg-secondary h-96 w-80 py-5 pl-8 pr-3 min-[450px]:w-96 min-[520px]:w-[28rem] lg:h-[38rem] lg:w-[36rem] lg:px-16 lg:py-11">
+      <div className="mb-3 flex flex-row">
         <Image
           src={src}
           alt="avatar"
@@ -53,7 +55,7 @@ const Comment = ({
         </p>
       </div>
 
-      <p className="mt-8 font-inter text-white">{comment}</p>
+      <DescriptionSecondary>{comment}</DescriptionSecondary>
     </div>
   );
 };
@@ -96,11 +98,11 @@ const CommentsSection = () => {
   return (
     <section className="mt-16 overflow-hidden px-5">
       <div className="mb-6 flex flex-row items-center justify-between lg:px-48">
-        <h2 className="sticky font-inter text-4xl font-bold text-accent md:text-6xl">
+        <SectionTitle>
           <p>ОТЗЫВЫ О НАС</p>
-        </h2>
+        </SectionTitle>
 
-        <div className="hidden gap-20 lg:flex">
+        <div className="mt-12 hidden gap-20 lg:flex">
           <CircleButton handleClick={() => handleClick(true)} left />
           <CircleButton handleClick={() => handleClick()} />
         </div>

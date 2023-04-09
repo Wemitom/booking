@@ -10,6 +10,7 @@ import {
 import Image, { StaticImageData } from 'next/image';
 
 import HeroSliderControls from './HeroSliderControls';
+import SectionTitle from '../typography/SectionTitle';
 
 export const HeroSliderContext = createContext<{
   curSlide: number;
@@ -52,9 +53,9 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
       value={{ curSlide, setCurSlide, length: images.length }}
     >
       <div className="flex flex-row justify-between">
-        <h2 className="my-12 px-5 font-inter text-4xl font-bold text-accent md:text-6xl lg:px-48">
-          <p>ФОТОГАЛЕРЕЯ</p>
-        </h2>
+        <div className="mb-12 px-5 lg:px-48">
+          <SectionTitle>ФОТОГАЛЕРЕЯ</SectionTitle>
+        </div>
         <div className="mr-48 hidden lg:block">
           <HeroSliderControls />
         </div>

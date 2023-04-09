@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import Button from '@/components/common/Button';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 import { variants, variantsPreview } from '@/utils/constants';
 
 const OtherSuitSection = ({ fullName }: { fullName: string }) => {
@@ -17,17 +19,17 @@ const OtherSuitSection = ({ fullName }: { fullName: string }) => {
 
   return (
     <section className="px-5 lg:px-48">
-      <h2 className="my-12 font-inter text-4xl font-bold text-accent md:text-6xl">
-        ДРУГОЙ КОТТЕДЖ
-      </h2>
+      <div className="mb-12">
+        <SectionTitle>ДРУГОЙ КОТТЕДЖ</SectionTitle>
+      </div>
 
       <Image src={otherSuit.src} alt={otherSuit.fullName} />
-      <h3 className="my-8 text-5xl font-extrabold text-white">
+      <h3 className="my-8 text-3xl font-extrabold text-white md:text-4xl xl:text-5xl">
         {otherSuit.fullName.toUpperCase()}
       </h3>
-      <div className="mb-8 text-white">
+      <div className="mb-8">
         {otherSuit.description.map((line, i) => (
-          <p key={'line_' + i}>{line}</p>
+          <DescriptionSecondary key={'line_' + i}>{line}</DescriptionSecondary>
         ))}
       </div>
       <div className="mb-14">

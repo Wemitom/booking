@@ -5,6 +5,8 @@ import Button from '@/components/common/Button';
 import Select from '@/components/common/Select';
 import Controls from '@/components/common/Select/Controls';
 import Options from '@/components/common/Select/Options';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
+import SectionTitle from '@/components/common/typography/SectionTitle';
 import { Variants, variants, variantsPreview } from '@/utils/constants';
 import useSelect from '@/utils/hooks/useSelect';
 
@@ -23,10 +25,12 @@ const Preview = () => {
           alt={chosen}
           className="my-auto xl:hidden"
         />
-        <div className="font-inter text-white">
+        <div>
           {variantsPreview[chosen as Variants[number]].description.map(
             (line, i) => (
-              <p key={'line' + i}>{line}</p>
+              <DescriptionSecondary key={'line' + i}>
+                {line}
+              </DescriptionSecondary>
             )
           )}
         </div>
@@ -52,7 +56,7 @@ const Preview = () => {
       <Image
         src={variantsPreview[chosen as Variants[number]].src}
         alt={chosen}
-        className="hidden h-[634px] w-1/2 xl:block"
+        className="hidden h-[680px] w-1/2 xl:block"
       />
     </div>
   );
@@ -62,11 +66,11 @@ const LivingOptionsSection = () => {
   return (
     <section className="mt-16 px-5 lg:px-48">
       <div className="flex flex-col">
-        <h2 className="mt-12 font-inter text-4xl font-bold text-accent md:text-6xl">
+        <SectionTitle>
           <span>ВАРИАНТЫ</span>
           <br />
           <span className="sm:ml-20">ПРОЖИВАНИЯ</span>
-        </h2>
+        </SectionTitle>
       </div>
 
       <Select options={variants}>

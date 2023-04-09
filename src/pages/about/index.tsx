@@ -5,6 +5,7 @@ import Button from '@/components/common/Button';
 import FindRoom from '@/components/common/FindRoom';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
+import MainTitle from '@/components/common/typography/MainTitle';
 
 const About = () => {
   return (
@@ -24,9 +25,9 @@ const About = () => {
           fill
         />
 
-        <h1 className="relative z-20 ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
-          КОНТАКТЫ
-        </h1>
+        <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
+          <MainTitle>КОНТАКТЫ</MainTitle>
+        </div>
 
         <FindRoom />
 
@@ -43,24 +44,24 @@ const About = () => {
       <main className="flex flex-col gap-9 px-5 py-20 lg:flex-row lg:justify-between lg:px-48">
         <div className="flex flex-col gap-8 lg:gap-16">
           <div>
-            <h2 className="mb-6 font-inter text-4xl font-bold text-white md:text-6xl">
+            <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
               8-800-1000-540
             </h2>
             <p className="text-accent">Для бронирования (бесплатно по РФ)</p>
           </div>
 
           <div>
-            <h2 className="mb-6 font-inter text-4xl font-bold text-white md:text-6xl">
+            <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
               WHATSAPP
             </h2>
             <p className="text-accent">Отвечаем круглосуточно, пн-вс</p>
           </div>
 
           <div>
-            <h2 className="mb-6 font-inter text-4xl font-bold text-white md:text-6xl">
+            <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
               НАШ АДРЕС
             </h2>
-            <p className="mb-6 font-inter text-white">
+            <p className="font-inter mb-6 text-white">
               659636, Россия, Алтайский край, Алтайский район, ОЭЗ Бирюзовая
               Катунь, 31
             </p>
@@ -69,10 +70,10 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="mb-6 font-inter text-xl font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+          <h3 className="font-inter mb-6 text-xl font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
             WELCOME@GRANDCHALET.RU
           </h3>
-          <p className="my-6 text-accent">Задать вопрос, написать отзыв</p>
+          <p className="text-accent my-6">Задать вопрос, написать отзыв</p>
 
           <h4 className="text-accent">Наименования юридического лица:</h4>
           <p className="text-white">

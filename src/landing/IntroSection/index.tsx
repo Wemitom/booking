@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import FindRoom from '@/components/common/FindRoom';
 import Header from '@/components/common/Header';
+import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import MainTitle from '@/components/common/typography/MainTitle';
 
 const IntroSection = () => {
   return (
@@ -15,16 +17,16 @@ const IntroSection = () => {
         fill
       />
       <div className="relative z-10 ml-5 mt-4 text-white lg:ml-48">
-        <h1 className="text-5xl font-extrabold !leading-snug lg:text-7xl 3xl:text-8xl">
-          GRAND
-          <br />
-          CHALET
-          <br />
-          ALTAY
-        </h1>
+        <MainTitle>
+          <p>GRAND</p>
+          <p>CHALET</p>
+          <p>ALTAY</p>
+        </MainTitle>
         <div className="mt-8 flex flex-row items-center gap-5">
-          <div className="hidden h-0 w-[45px] border-2 border-accent lg:block" />
-          <p>Пять звёзд в окружении гор на берегу Катуни</p>
+          <div className="border-accent hidden h-0 w-[45px] border-2 lg:block" />
+          <DescriptionMain>
+            Пять звёзд в окружении гор на берегу Катуни
+          </DescriptionMain>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import Masonry from 'react-masonry-css';
 
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
+import MainTitle from '@/components/common/typography/MainTitle';
 import Review from '@/components/reviews/Review';
 import { comments } from '@/utils/constants';
 
@@ -41,9 +42,9 @@ export default function Reviews() {
           fill
         />
 
-        <h1 className="relative z-20 ml-5 mt-4 text-5xl font-extrabold !leading-snug text-white lg:ml-48 lg:mt-12 lg:text-7xl 3xl:text-8xl">
-          ОТЗЫВЫ О НАС
-        </h1>
+        <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
+          <MainTitle>ОТЗЫВЫ О НАС</MainTitle>
+        </div>
 
         <div
           className="absolute bottom-0 z-10 h-full w-full"
@@ -64,6 +65,7 @@ export default function Reviews() {
           {renderReviews()}
         </Masonry>
       </main>
+
       <Footer />
     </>
   );
