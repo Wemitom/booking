@@ -22,6 +22,36 @@ module.exports = {
       },
       screens: {
         '3xl': '1792px'
+      },
+      keyframes: {
+        crossTop: {
+          to: {
+            transform: 'translateY(6px) rotate(45deg)'
+          }
+        },
+        hamburgerTop: {
+          from: {
+            transform: 'translateY(6px) rotate(45deg)'
+          }
+        },
+        crossBottom: {
+          to: {
+            transform: 'translateY(-6px) rotate(-45deg)',
+            width: '4rem'
+          }
+        },
+        hamburgerBottom: {
+          from: {
+            transform: 'translateY(-6px) rotate(-45deg)',
+            width: '4rem'
+          }
+        }
+      },
+      animation: {
+        'cross-top': 'crossTop 0.3s ease-in-out forwards',
+        'hamburger-top': 'hamburgerTop 0.3s ease-in-out forwards',
+        'cross-bottom': 'crossBottom 0.3s ease-in-out forwards',
+        'hamburger-bottom': 'hamburgerBottom 0.3s ease-in-out forwards'
       }
     }
   },

@@ -1,9 +1,14 @@
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import { classNames } from '@/utils/functions';
+
 const Header = () => {
   const { push } = useRouter();
+  const [open, setOpen] = useState<boolean | null>(null); // Null means hamburger hasnt been clicked
 
   return (
     <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] font-semibold text-white sm:h-[140px]">
@@ -53,13 +58,29 @@ const Header = () => {
         />
       </button>
 
-      <button className="ml-9">
-        <Image
-          priority
-          src="/images/hamburger.svg"
-          alt="whatsapp"
-          width={64.22}
-          height={16.56}
+      <button
+        className="ml-9 flex flex-col gap-2"
+        onClick={() => setOpen(!open)}
+      >
+        <span
+          className={classNames(
+            'h-1 w-16 bg-white',
+            typeof open === 'boolean'
+              ? open
+                ? 'animate-cross-top'
+                : 'animate-hamburger-top'
+              : ''
+          )}
+        />
+        <span
+          className={classNames(
+            'h-1 w-11 bg-white',
+            typeof open === 'boolean'
+              ? open
+                ? 'animate-cross-bottom'
+                : 'animate-hamburger-bottom'
+              : ''
+          )}
         />
       </button>
     </header>
