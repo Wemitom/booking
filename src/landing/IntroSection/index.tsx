@@ -2,13 +2,18 @@ import Image from 'next/image';
 
 import FindRoom from '@/components/common/FindRoom';
 import Header from '@/components/common/Header';
+import SidebarControlls from '@/components/common/SidebarControlls';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
 import MainTitle from '@/components/common/typography/MainTitle';
+import { links } from '@/utils/constants';
 
 const IntroSection = () => {
   return (
     <section className="relative min-h-screen w-auto">
-      <Header />
+      <SidebarControlls values={links}>
+        <Header />
+      </SidebarControlls>
+
       <Image
         priority
         src="/images/landingMainDesk.png"

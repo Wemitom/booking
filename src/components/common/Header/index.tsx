@@ -1,14 +1,13 @@
-import { useState } from 'react';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { classNames } from '@/utils/functions';
+import useSidebar from '@/utils/hooks/useSidebar';
 
 const Header = () => {
   const { push } = useRouter();
-  const [open, setOpen] = useState<boolean | null>(null); // Null means hamburger hasnt been clicked
+  const { show, setShow } = useSidebar(); // Null means hamburger hasnt been clicked
 
   return (
     <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] font-semibold text-white sm:h-[140px]">
@@ -34,8 +33,8 @@ const Header = () => {
       <nav
         className={classNames(
           'ml-16 hidden flex-row gap-14 xl:flex',
-          typeof open === 'boolean'
-            ? open
+          typeof show === 'boolean'
+            ? show
               ? 'animate-fade-out'
               : 'animate-fade-in'
             : ''
@@ -53,8 +52,8 @@ const Header = () => {
       <div
         className={classNames(
           'flex flex-row ml-auto',
-          typeof open === 'boolean'
-            ? open
+          typeof show === 'boolean'
+            ? show
               ? 'animate-fade-out'
               : 'animate-fade-in'
             : ''
@@ -80,13 +79,13 @@ const Header = () => {
 
       <button
         className="ml-9 flex flex-col gap-2"
-        onClick={() => setOpen(!open)}
+        onClick={() => setShow && setShow(!show)}
       >
         <span
           className={classNames(
             'h-1 w-16 bg-white',
-            typeof open === 'boolean'
-              ? open
+            typeof show === 'boolean'
+              ? show
                 ? 'animate-cross-top'
                 : 'animate-hamburger-top'
               : ''
@@ -95,8 +94,8 @@ const Header = () => {
         <span
           className={classNames(
             'h-1 w-11 bg-white',
-            typeof open === 'boolean'
-              ? open
+            typeof show === 'boolean'
+              ? show
                 ? 'animate-cross-bottom'
                 : 'animate-hamburger-bottom'
               : ''
