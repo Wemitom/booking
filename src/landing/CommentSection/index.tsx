@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import star from 'public/images/star.svg';
 
 import Button from '@/components/common/Button';
 import CircleButton from '@/components/common/CircleButton';
@@ -38,15 +37,10 @@ const Comment = ({
         <div className="ml-6">
           <p className="font-inter font-semibold text-white">{user}</p>
 
-          <div className="mt-3 flex gap-1">
-            {Array.from(Array(5)).map((_, i) => (
-              <Image
-                key={i}
-                src={star}
-                alt="star"
-                className="w-[14px] lg:w-[26px]"
-              />
-            ))}
+          <div className="text-accent mt-3 flex gap-1 text-xl sm:text-2xl md:text-3xl">
+            {Array.from(Array(5)).map((_, i) =>
+              i < stars ? <>&#9733;</> : <>&#9734;</>
+            )}
           </div>
         </div>
 

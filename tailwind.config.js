@@ -26,24 +26,36 @@ module.exports = {
       keyframes: {
         crossTop: {
           to: {
-            transform: 'translateY(6px) rotate(45deg)'
+            transform: 'translateY(6px) rotate(45deg)',
+            width: '3rem'
           }
         },
         hamburgerTop: {
           from: {
-            transform: 'translateY(6px) rotate(45deg)'
+            transform: 'translateY(6px) rotate(45deg)',
+            width: '3rem'
           }
         },
         crossBottom: {
           to: {
             transform: 'translateY(-6px) rotate(-45deg)',
-            width: '4rem'
+            width: '3rem'
           }
         },
         hamburgerBottom: {
           from: {
             transform: 'translateY(-6px) rotate(-45deg)',
-            width: '4rem'
+            width: '3rem'
+          }
+        },
+        fadeIn: {
+          from: {
+            opacity: 0
+          }
+        },
+        fadeOut: {
+          to: {
+            opacity: 0
           }
         }
       },
@@ -51,7 +63,9 @@ module.exports = {
         'cross-top': 'crossTop 0.3s ease-in-out forwards',
         'hamburger-top': 'hamburgerTop 0.3s ease-in-out forwards',
         'cross-bottom': 'crossBottom 0.3s ease-in-out forwards',
-        'hamburger-bottom': 'hamburgerBottom 0.3s ease-in-out forwards'
+        'hamburger-bottom': 'hamburgerBottom 0.3s ease-in-out forwards',
+        'fade-in': 'fadeIn 0.2s ease-in-out forwards',
+        'fade-out': 'fadeOut 0.2s ease-in-out forwards'
       }
     }
   },

@@ -31,7 +31,16 @@ const Header = () => {
         />
       </div>
 
-      <nav className="ml-16 hidden flex-row gap-14 xl:flex">
+      <nav
+        className={classNames(
+          'ml-16 hidden flex-row gap-14 xl:flex',
+          typeof open === 'boolean'
+            ? open
+              ? 'animate-fade-out'
+              : 'animate-fade-in'
+            : ''
+        )}
+      >
         <p>Проживание</p>
 
         <Link href="/restaurant">Ресторан &#34;Сосны&#34;</Link>
@@ -41,22 +50,33 @@ const Header = () => {
         <Link href="/about">Контакты</Link>
       </nav>
 
-      <div className="ml-auto hidden sm:block">
-        <address className="font-inter font-normal not-italic">
-          8-800-1000-540
-        </address>
-        <p className="text-accent font-normal">Бесплатно по РФ</p>
-      </div>
+      <div
+        className={classNames(
+          'flex flex-row ml-auto',
+          typeof open === 'boolean'
+            ? open
+              ? 'animate-fade-out'
+              : 'animate-fade-in'
+            : ''
+        )}
+      >
+        <div className="hidden sm:block">
+          <address className="font-inter font-normal not-italic">
+            8-800-1000-540
+          </address>
+          <p className="text-accent font-normal">Бесплатно по РФ</p>
+        </div>
 
-      <button className="ml-auto sm:ml-9">
-        <Image
-          priority
-          src="/images/whatsapp.svg"
-          alt="whatsapp"
-          width={27}
-          height={27}
-        />
-      </button>
+        <button className="ml-auto sm:ml-9">
+          <Image
+            priority
+            src="/images/whatsapp.svg"
+            alt="whatsapp"
+            width={27}
+            height={27}
+          />
+        </button>
+      </div>
 
       <button
         className="ml-9 flex flex-col gap-2"
