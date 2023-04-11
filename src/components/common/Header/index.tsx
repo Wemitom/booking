@@ -79,7 +79,12 @@ const Header = () => {
 
       <button
         className="ml-9 flex flex-col gap-2"
-        onClick={() => setShow && setShow(!show)}
+        onClick={() => {
+          if (setShow) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            setShow(!show);
+          }
+        }}
       >
         <span
           className={classNames(
