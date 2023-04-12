@@ -85,7 +85,7 @@ const Header = () => {
         className="[&>span]:hover:bg-accent ml-9 flex flex-col gap-2"
         onClick={() => {
           if (setShow) {
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0 });
             setShow(!show);
           }
         }}
