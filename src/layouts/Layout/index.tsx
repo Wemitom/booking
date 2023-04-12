@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Image from 'next/image';
 
 import FindRoom from '@/components/common/FindRoom';
@@ -17,26 +15,34 @@ const Layout = ({
   renderFindRoom?: boolean;
 }) => {
   return (
-    <section className="relative min-h-screen w-auto">
+    <>
       <SidebarControlls values={links}>
         <Header />
       </SidebarControlls>
 
-      <Image priority src={src} alt="main_img" className="object-cover" fill />
+      <section className="relative min-h-screen w-auto">
+        <Image
+          priority
+          src={src}
+          alt="main_img"
+          className="object-cover"
+          fill
+        />
 
-      {children}
+        <div className="pt-32 sm:pt-44">{children}</div>
 
-      {renderFindRoom && <FindRoom />}
+        {renderFindRoom && <FindRoom />}
 
-      <div
-        className="absolute bottom-0 z-10 h-full w-full"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
-        }}
-      />
-      <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
-    </section>
+        <div
+          className="absolute bottom-0 z-10 h-full w-full"
+          style={{
+            background:
+              'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
+          }}
+        />
+        <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
+      </section>
+    </>
   );
 };
 

@@ -38,12 +38,8 @@ const SidebarControlls = ({
     <SidebarControllsContext.Provider value={{ show, setShow }}>
       <div
         className={classNames(
-          'transition-colors duration-200 ease-in-out flex flex-col',
-          typeof show === 'boolean'
-            ? show
-              ? 'bg-primary z-50 relative min-h-screen'
-              : 'bg-transparent'
-            : 'bg-transparent'
+          'flex flex-col w-full absolute top-0 z-30',
+          show && 'bg-primary h-screen fixed overflow-y-auto'
         )}
       >
         {children}

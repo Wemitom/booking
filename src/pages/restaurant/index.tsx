@@ -16,7 +16,7 @@ export default function Restaurant() {
       </Head>
 
       <Layout src="/images/restaurant.png" renderFindRoom>
-        <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
+        <div className="relative z-20 ml-5 lg:ml-48">
           <MainTitle>РЕСТОРАН &laquo;СОСНЫ&raquo;</MainTitle>
         </div>
       </Layout>

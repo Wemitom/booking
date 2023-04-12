@@ -273,7 +273,7 @@ export const links = [
   {
     name: 'Рестораны',
     content: [
-      { text: '"Сосны"', link: '/restaurants' },
+      { text: '"Сосны"', link: '/restaurant' },
       { text: '"Лес и река"', link: null },
       { text: '"Хвоя"', link: null },
       { text: 'Бар "Кедр и пар"', link: null },

@@ -1,11 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import arrowFilled from 'public/images/arrow.svg';
 import arrow from 'public/images/arrowWhite.svg';
 
-import { classNames } from '@/utils/functions';
+import { classNames, threeStateBool } from '@/utils/functions';
 import useSidebar from '@/utils/hooks/useSidebar';
 
 const Sidebar = ({
@@ -13,7 +13,7 @@ const Sidebar = ({
 }: {
   values: { name: string; content: { text: string; link: null | string }[] }[];
 }) => {
-  const { show } = useSidebar();
+  const { show, setShow } = useSidebar();
   const names = useMemo(() => values.map((value) => value.name), [values]);
   type Names = (typeof names)[number];
   const [chosenName, setChosenName] = useState<Names>();
@@ -43,16 +43,27 @@ const Sidebar = ({
     );
   };
 
+  useEffect(() => {
+    const handleKeydown = ({ key }: KeyboardEvent) =>
+      key === 'Escape' && setShow && setShow(false);
+
+    document.addEventListener('keydown', handleKeydown);
+    return () => {
+      document.removeEventListener('keydown', handleKeydown);
+    };
+  }, [setShow]);
+
   return (
     <div
       aria-hidden={!show}
       className={classNames(
-        'bg-bottom bg-no-repeat h-full sm:bg-deskVector bg-phoneVector grow bg-contain overflow-auto',
-        typeof show === 'boolean'
-          ? show
-            ? 'animate-fade-in'
-            : 'animate-fade-out hidden'
-          : 'hidden'
+        'bg-bottom bg-no-repeat h-full sm:bg-deskVector bg-phoneVector grow bg-contain overflow-y-auto pb-12',
+        threeStateBool(
+          show,
+          'animate-fade-in',
+          'animate-fade-out hidden',
+          'hidden'
+        )
       )}
     >
       <div className="flex flex-row px-5 md:gap-12 lg:px-48">
@@ -63,6 +74,7 @@ const Sidebar = ({
                 className="mb-6 flex gap-12"
                 onMouseEnter={() => setChosenName(name)}
                 onClick={() => setChosenName(name)}
+                tabIndex={0}
               >
                 <p
                   className={classNames(

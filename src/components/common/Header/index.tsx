@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { classNames } from '@/utils/functions';
+import { classNames, threeStateBool } from '@/utils/functions';
 import useSidebar from '@/utils/hooks/useSidebar';
 
 const Header = () => {
@@ -10,7 +10,11 @@ const Header = () => {
   const { show, setShow } = useSidebar(); // Null means hamburger hasnt been clicked
 
   return (
-    <header className="relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] font-semibold text-white sm:h-[140px]">
+    <header
+      className={classNames(
+        'relative z-20 flex h-[104px] w-full flex-row items-center px-7 py-[34px] font-semibold text-white sm:h-[140px]'
+      )}
+    >
       <div className="flex cursor-pointer flex-row" onClick={() => push('/')}>
         <Image
           priority
@@ -78,7 +82,7 @@ const Header = () => {
       </div>
 
       <button
-        className="ml-9 flex flex-col gap-2"
+        className="[&>span]:hover:bg-accent ml-9 flex flex-col gap-2"
         onClick={() => {
           if (setShow) {
             window.scrollTo({ top: 0, behavior: 'instant' });
@@ -88,22 +92,24 @@ const Header = () => {
       >
         <span
           className={classNames(
-            'h-1 w-16 bg-white',
-            typeof show === 'boolean'
-              ? show
-                ? 'animate-cross-top'
-                : 'animate-hamburger-top'
-              : ''
+            'h-1 w-16 bg-white transition-colors duration-300',
+            threeStateBool(
+              show,
+              'animate-cross-top',
+              'animate-hamburger-top',
+              ''
+            )
           )}
         />
         <span
           className={classNames(
-            'h-1 w-11 bg-white',
-            typeof show === 'boolean'
-              ? show
-                ? 'animate-cross-bottom'
-                : 'animate-hamburger-bottom'
-              : ''
+            'h-1 w-11 bg-white transition-colors duration-300',
+            threeStateBool(
+              show,
+              'animate-cross-bottom',
+              'animate-hamburger-bottom',
+              ''
+            )
           )}
         />
       </button>
