@@ -39,7 +39,11 @@ const Comment = ({
 
           <div className="text-accent mt-3 flex gap-1 text-xl sm:text-2xl md:text-3xl">
             {Array.from(Array(5)).map((_, i) =>
-              i < stars ? <>&#9733;</> : <>&#9734;</>
+              i < stars ? (
+                <span key={'star_' + i}>&#9733;</span>
+              ) : (
+                <span key={'star_' + i}>&#9734;</span>
+              )
             )}
           </div>
         </div>
@@ -112,7 +116,7 @@ const CommentsSection = () => {
         ref={flexRef}
       >
         {comments.map((comment) => (
-          <Comment key={comment.id} {...comment} />
+          <Comment key={'comment_' + comment.id} {...comment} />
         ))}
       </div>
 

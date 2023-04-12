@@ -33,7 +33,7 @@ const TourSection = () => {
 
           <div className="mb-4 mt-8 flex grow flex-col justify-between gap-6 lg:mt-auto lg:grow-0 lg:flex-row lg:items-center lg:gap-0 2xl:ml-20 [&>button]:w-full lg:[&>button]:w-[280px]">
             <Button title="Карта туркомплекса" />
-            <p className="grow font-inter text-white lg:text-center">
+            <p className="font-inter grow text-white lg:text-center">
               Как доехать
             </p>
           </div>

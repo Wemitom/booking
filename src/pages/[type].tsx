@@ -1,17 +1,17 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 import Footer from '@/components/common/Footer';
-import Header from '@/components/common/Header';
 import HeroSlider from '@/components/common/HeroSlider';
 import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
 import MainTitle from '@/components/common/typography/MainTitle';
 import BookingSection from '@/components/livingVariant/BookingSection';
 import FeaturesSection from '@/components/livingVariant/FeaturesSection';
 import OtherSuitSection from '@/components/livingVariant/OtherSuitSection';
+import Layout from '@/layouts/Layout';
 import { Variants, variants, variantsPreview } from '@/utils/constants';
 
 export default function LivingOption({
@@ -33,17 +33,7 @@ export default function LivingOption({
         <title>{fullName}</title>
       </Head>
 
-      <section className="relative min-h-screen w-auto">
-        <Header />
-
-        <Image
-          priority
-          src={src}
-          alt="living_variant"
-          className="object-cover"
-          fill
-        />
-
+      <Layout src={src.src}>
         <div className="relative z-20 mx-5 mt-4 lg:mx-48 lg:mt-12">
           <div className="flex flex-col gap-12 xl:flex-row">
             <div>
@@ -92,16 +82,7 @@ export default function LivingOption({
             </div>
           </div>
         </div>
-
-        <div
-          className="absolute bottom-0 z-10 h-full w-full"
-          style={{
-            background:
-              'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
-          }}
-        />
-        <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
-      </section>
+      </Layout>
 
       <main>
         <section className="mt-16">

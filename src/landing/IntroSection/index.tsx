@@ -5,22 +5,11 @@ import Header from '@/components/common/Header';
 import SidebarControlls from '@/components/common/SidebarControlls';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
 import MainTitle from '@/components/common/typography/MainTitle';
-import { links } from '@/utils/constants';
+import Layout from '@/layouts/Layout';
 
 const IntroSection = () => {
   return (
-    <section className="relative min-h-screen w-auto">
-      <SidebarControlls values={links}>
-        <Header />
-      </SidebarControlls>
-
-      <Image
-        priority
-        src="/images/landingMainDesk.png"
-        alt="landing_img"
-        className="object-cover"
-        fill
-      />
+    <Layout src="/images/landingMainDesk.png" renderFindRoom>
       <div className="relative z-10 ml-5 mt-4 text-white lg:ml-48">
         <MainTitle>
           <p>GRAND</p>
@@ -34,18 +23,7 @@ const IntroSection = () => {
           </DescriptionMain>
         </div>
       </div>
-
-      <FindRoom />
-
-      <div
-        className="absolute bottom-0 z-10 h-full w-full"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(68, 81, 57, 0) 52.17%, #445139 100%)'
-        }}
-      />
-      <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
-    </section>
+    </Layout>
   );
 };
 
