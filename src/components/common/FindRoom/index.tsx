@@ -17,7 +17,7 @@ export default function FindRoom() {
   setDefaultLocale('ru');
 
   return (
-    <div className="relative z-20 lg:w-full 2xl:absolute 2xl:bottom-20">
+    <div className="relative z-20 lg:w-full 2xl:absolute">
       <div className="relative mx-5 mt-8 flex flex-col items-center gap-6 bg-white p-5 sm:pl-28 sm:pr-16 lg:mx-48 2xl:flex-row 2xl:px-5 2xl:py-12 [&>*]:grow">
         <div className="flex flex-col items-start 2xl:flex-row 2xl:items-center 2xl:shadow-[4px_4px_4px_rgba(0,0,0,0.1)] [&>*]:w-full [&>*]:grow [&>*]:2xl:mr-4">
           <div className="flex">
