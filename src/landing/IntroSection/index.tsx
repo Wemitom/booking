@@ -9,7 +9,7 @@ import Layout from '@/layouts/Layout';
 
 const IntroSection = () => {
   return (
-    <Layout src="/images/landingMain.mp4" video renderFindRoom>
+    <Layout src="/images/landingMainDesk.MOV" video renderFindRoom>
       <div className="relative z-10 ml-5 mt-4 text-white lg:ml-48">
         <MainTitle>
           <p>GRAND</p>
