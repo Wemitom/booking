@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import landingTour from 'public/images/landingTour.png';
+import landingTour from 'public/images/landingTour.jpg';
 
 import Button from '@/components/common/Button';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
