@@ -8,10 +8,12 @@ import { links } from '@/utils/constants';
 const Layout = ({
   children,
   src,
+  video,
   renderFindRoom
 }: {
   children: JSX.Element | JSX.Element[];
   src: string;
+  video?: boolean;
   renderFindRoom?: boolean;
 }) => {
   return (
@@ -21,13 +23,24 @@ const Layout = ({
       </SidebarControlls>
 
       <section className="relative min-h-screen w-auto">
-        <Image
-          priority
-          src={src}
-          alt="main_img"
-          className="object-cover"
-          fill
-        />
+        {video ? (
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute inset-0 max-h-[100dvh] min-w-full object-cover"
+          >
+            <source src={src} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            priority
+            src={src}
+            alt="main_img"
+            className="object-cover"
+            fill
+          />
+        )}
 
         <div className="pt-32 sm:pt-44">{children}</div>
 

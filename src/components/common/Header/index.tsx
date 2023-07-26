@@ -7,7 +7,7 @@ import useSidebar from '@/utils/hooks/useSidebar';
 
 const Header = () => {
   const { push } = useRouter();
-  const { show, setShow } = useSidebar(); // Null means hamburger hasnt been clicked
+  const { show, setShow } = useSidebar(); // Null means burger hasnt been clicked
 
   return (
     <header
