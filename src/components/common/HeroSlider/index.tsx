@@ -33,21 +33,6 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
   const refContainer = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleBeforePopState = () => {
-      setCurSlide(0);
-      setContainerWidth(0);
-      setImgWidth(0);
-      setImageLoaded(false);
-    };
-
-    window.addEventListener('beforepopstate', handleBeforePopState);
-
-    return () => {
-      window.removeEventListener('beforepopstate', handleBeforePopState);
-    };
-  }, []);
-
-  useEffect(() => {
     const changeSize = () => {
       ref.current && setImgWidth(ref.current.clientWidth);
       refContainer.current &&
@@ -84,7 +69,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
           style={{
             transform: `translateX(${
               containerWidth / 2 - curSlide * (imgWidth + 96)
-            }px`
+            }px)`
           }}
         >
           {images.map((slide, i) => (
