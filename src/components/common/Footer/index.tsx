@@ -13,33 +13,19 @@ const Footer = () => {
   return (
     <footer className="font-inter lg:border-accent/50 flex flex-col gap-14 px-5 py-20 pb-60 lg:border-t lg:px-48 min-[1140px]:flex-row min-[1140px]:gap-40">
       <div className="flex flex-col gap-4 xl:w-1/4">
-        <div className="flex flex-row">
-          <Image
-            className="h-auto w-[38px] sm:w-[72px]"
-            src="images/logoSVG.svg"
-            width={72}
-            height={72}
-            alt="logo"
-          />
-          <Image
-            className="ml-3 h-auto w-[43px] sm:w-20"
-            src="images/logoWord.svg"
-            width={54}
-            height={80}
-            alt="logo"
-          />
-        </div>
-
-        <p className="text-sm text-white">
-          «Гранд Шале Алтай» — Престижный комплекс на Алтае, расположенный среди
-          вековых сосен на самом берегу Катуни.
-        </p>
+        <Image
+          className="h-auto w-[120px] sm:w-[200px]"
+          src="/images/logo.png"
+          width={200}
+          height={180}
+          alt="logo"
+        />
 
         <div className="flex flex-row gap-3">
           <Image src="/images/phone.svg" alt="phone" width={26} height={26} />
 
           <div>
-            <address className="not-italic text-white">8-800-1000-540</address>
+            <address className="not-italic text-white">8-993-610-68-92</address>
             <p className="text-accent">Бесплатно по РФ</p>
           </div>
 
@@ -62,8 +48,8 @@ const Footer = () => {
           />
 
           <p className="text-white">
-            659636, Россия, Алтайский край, Алтайский район, ОЭЗ Бирюзовская
-            Катунь, 31
+            Россия, Калужская область, Тарусский район, сельское поселение
+            Волковское, база отдыха «Крутой Яр»
           </p>
         </div>
 

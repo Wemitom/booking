@@ -1,9 +1,14 @@
+import { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 import compass from 'public/images/compass.svg';
-import experiences from 'public/images/experiences.png';
+import experiences from 'public/images/experiences.jpg';
 
+import Button from '@/components/common/Button';
+import Modal from '@/components/common/Modal';
 import Select from '@/components/common/Select';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
+import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
 import SecondaryTitle from '@/components/common/typography/SecondaryTitle';
 import SectionTitle from '@/components/common/typography/SectionTitle';
 import {
@@ -13,10 +18,18 @@ import {
 } from '@/utils/constants';
 import useSelect from '@/utils/hooks/useSelect';
 
-const Experience = ({ name, src }: { name: string; src: string }) => {
+const Experience = ({
+  name,
+  handleClick
+}: {
+  name: string;
+  handleClick: () => void;
+}) => {
   return (
-    <div className="border-accent/50 flex flex-col items-center border px-16 py-5">
-      <Image src={src} alt={name} width={56} height={56} />
+    <div
+      className="border-accent/50 flex h-20 w-60 cursor-pointer flex-col items-center justify-center border px-16 py-5 text-center"
+      onClick={handleClick}
+    >
       <p className="font-inter text-sm font-medium text-white">{name}</p>
     </div>
   );
@@ -24,15 +37,74 @@ const Experience = ({ name, src }: { name: string; src: string }) => {
 
 const Experineces = () => {
   const { chosen } = useSelect();
+  const [chosenExperience, setChosenExperience] = useState<{
+    name: string;
+    src: string;
+    description: string | string[];
+  } | null>(null);
+
+  useEffect(() => {
+    if (chosenExperience) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'auto';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [chosenExperience]);
 
   return (
-    <div className="flex gap-6 overflow-x-auto py-6 2xl:flex-wrap 2xl:overflow-x-hidden 2xl:pr-32">
-      {experiencesNames[chosen as ExperiencesVariants[number]].map(
-        (experience, i) => (
-          <Experience key={experience.name + i} {...experience} />
-        )
+    <>
+      <div className="flex gap-6 overflow-x-auto py-6 2xl:flex-wrap 2xl:overflow-x-hidden 2xl:pr-32">
+        {experiencesNames[chosen as ExperiencesVariants[number]].map(
+          (experience, i) => (
+            <Experience
+              key={experience.name + i}
+              name={experience.name}
+              handleClick={() => setChosenExperience(experience)}
+            />
+          )
+        )}
+      </div>
+
+      {chosenExperience && (
+        <Modal onClose={() => setChosenExperience(null)}>
+          <div className="flex grow flex-col items-center gap-6 px-6 py-12">
+            <SecondaryTitle>{chosenExperience.name ?? ''}</SecondaryTitle>
+
+            <Image
+              src={chosenExperience.src}
+              className="h-auto"
+              width={300}
+              height={300}
+              alt={chosenExperience.name}
+            />
+
+            <div className="max-w-[50vw]">
+              {Array.isArray(chosenExperience.description) ? (
+                chosenExperience.description.map((description, i) => (
+                  <DescriptionSecondary key={i}>
+                    {description}
+                  </DescriptionSecondary>
+                ))
+              ) : (
+                <DescriptionSecondary>
+                  {chosenExperience.description}
+                </DescriptionSecondary>
+              )}
+            </div>
+
+            <div className="w-8/12">
+              <Button
+                title="Закрыть"
+                size="full"
+                onClick={() => setChosenExperience(null)}
+                filled
+              />
+            </div>
+          </div>
+        </Modal>
       )}
-    </div>
+    </>
   );
 };
 
@@ -56,16 +128,20 @@ const ExperiencesSection = () => {
               <div>
                 <div className="mb-12 h-12 align-middle">
                   <SecondaryTitle>
-                    Рядом с туркомплексом Grand Chalet Altay
+                    Рядом с базой отдыха Крутой Яр
                   </SecondaryTitle>
                 </div>
+
                 <DescriptionMain>
-                  Вас ожидают невероятные спуски по горам Алтая, заснеженные
-                  пики и конечно отдых в приятной компании единомышленников. На
-                  горно-лыжных комплексах Алтая доступны склоны разного уровня
-                  сложности – как для начинающих, так и для продвинутых, а ваши
-                  дети после занятий с профессиональным тренером начнут кататься
-                  как взрослые.
+                  Мы находимся между городами Серпухов и Таруса, оба города
+                  имеют большую историческую ценность. Отдыхающие могут
+                  познакомиться ближе с культурой и посетить
+                  достопримечательности этих городов. Один из самых популярных:
+                  Тарусская картинная галерея (10 км), Музей семьи Цветаевых (10
+                  км), Высоцкий монастырь (24 км), Введенский Владычний женский
+                  монастырь (22 км), Соборная гора (21км), Приокско-террасный
+                  заповедник (33 км). Мы с радостью подскажем Вам о живописных
+                  местах рядом.
                 </DescriptionMain>
               </div>
             </div>

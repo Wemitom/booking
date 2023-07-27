@@ -57,6 +57,18 @@ module.exports = {
           to: {
             opacity: 0
           }
+        },
+        enter: {
+          from: {
+            opacity: 0,
+            transform: 'translateY(100%)'
+          }
+        },
+        leave: {
+          to: {
+            opacity: 0,
+            transform: 'translateY(100%)'
+          }
         }
       },
       animation: {
@@ -65,7 +77,9 @@ module.exports = {
         'cross-bottom': 'crossBottom 0.3s ease-in-out forwards',
         'hamburger-bottom': 'hamburgerBottom 0.3s ease-in-out forwards',
         'fade-in': 'fadeIn 0.3s ease-in-out forwards',
-        'fade-out': 'fadeOut 0.3s ease-in-out forwards'
+        'fade-out': 'fadeOut 0.3s ease-in-out forwards',
+        enter: 'enter 0.3s ease-in-out forwards',
+        leave: 'leave 0.3s ease-in-out forwards'
       }
     }
   },

@@ -25,7 +25,6 @@ HeroSliderContext.displayName = 'HeroSliderContext';
 
 const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
   const [curSlide, setCurSlide] = useState(0);
-  const [imgWidth, setImgWidth] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -34,7 +33,6 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
 
   useEffect(() => {
     const changeSize = () => {
-      ref.current && setImgWidth(ref.current.clientWidth);
       refContainer.current &&
         setContainerWidth(refContainer.current.clientWidth);
     };
@@ -68,7 +66,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
           className="relative mb-6 flex gap-24 transition-transform"
           style={{
             transform: `translateX(${
-              containerWidth / 2 - curSlide * (imgWidth + 96)
+              containerWidth / 2 - curSlide * (600 + 96)
             }px`
           }}
         >
@@ -76,6 +74,7 @@ const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
             <Image
               src={slide}
               ref={ref}
+              width={600}
               alt={'slide_' + i}
               key={'slide_' + i}
               onLoad={() => setImageLoaded(true)}

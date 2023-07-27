@@ -94,7 +94,7 @@ const CommentsSection = () => {
   }, []);
 
   return (
-    <section className="mt-16 overflow-hidden px-5">
+    <section className="my-16 overflow-hidden px-5">
       <div className="mb-6 flex flex-row items-center justify-between lg:px-48">
         <SectionTitle>
           <p>ОТЗЫВЫ О НАС</p>

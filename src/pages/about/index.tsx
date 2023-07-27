@@ -22,7 +22,7 @@ const About = () => {
         <div className="flex flex-col gap-8 lg:gap-16">
           <div>
             <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
-              8-800-1000-540
+              8-993-6106-892
             </h2>
             <p className="text-accent">Для бронирования (бесплатно по РФ)</p>
           </div>
@@ -39,8 +39,8 @@ const About = () => {
               НАШ АДРЕС
             </h2>
             <p className="font-inter mb-6 text-white">
-              659636, Россия, Алтайский край, Алтайский район, ОЭЗ Бирюзовая
-              Катунь, 31
+              Россия, Калужская область, Тарусский район, сельское поселение
+              Волковское, база отдыха «Крутой Яр»
             </p>
             <Button title="Построить маршрут" />
           </div>
@@ -48,7 +48,7 @@ const About = () => {
 
         <div>
           <h3 className="font-inter mb-6 text-xl font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
-            WELCOME@GRANDCHALET.RU
+            ???????@??????.RU
           </h3>
           <p className="text-accent my-6">Задать вопрос, написать отзыв</p>
 

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -43,15 +43,18 @@ const Sidebar = ({
     );
   };
 
-  useEffect(() => {
-    const handleKeydown = ({ key }: KeyboardEvent) =>
-      key === 'Escape' && setShow && setShow(false);
+  const handleKeydown = useCallback(
+    ({ key }: KeyboardEvent) =>
+      key === 'Escape' && setShow && show !== null && setShow(false),
+    [setShow, show]
+  );
 
+  useEffect(() => {
     document.addEventListener('keydown', handleKeydown);
     return () => {
       document.removeEventListener('keydown', handleKeydown);
     };
-  }, [setShow]);
+  }, [handleKeydown, setShow]);
 
   return (
     <div

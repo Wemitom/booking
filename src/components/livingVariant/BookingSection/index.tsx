@@ -25,16 +25,6 @@ const BookingSection = () => {
           </div>
 
           <Button title="Забронировать" size="full" filled />
-
-          <div className="font-inter my-6 text-white">
-            <p className="my-6 font-medium xl:text-xl">Включенные услуги:</p>
-
-            <ul className="[&>li]:list-inside [&>li]:list-disc">
-              <li>Завтрак в ресторане «Сосны»</li>
-              <li>Меню подушек и одеял</li>
-              <li>Вечерний сервис</li>
-            </ul>
-          </div>
         </div>
 
         <div>

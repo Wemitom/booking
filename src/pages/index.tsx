@@ -6,10 +6,8 @@ import ExperiencesSection from '@/landing/ExpiriencesSection';
 import IntroSection from '@/landing/IntroSection';
 import LivingOptionsSection from '@/landing/LivingOptionsSection';
 import RestaurantsSection from '@/landing/RestaurantsSection';
-import SightsSections from '@/landing/SightsSection';
 import SpaSection from '@/landing/SpaSection';
 import TourSection from '@/landing/TourSection';
-import TransferSection from '@/landing/TransferSection';
 
 export default function Home() {
   return (
@@ -32,9 +30,7 @@ export default function Home() {
         <SpaSection />
         <RestaurantsSection />
         <ExperiencesSection />
-        <SightsSections />
         <CommentsSection />
-        <TransferSection />
       </main>
 
       <Footer />

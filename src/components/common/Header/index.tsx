@@ -18,18 +18,10 @@ const Header = () => {
       <div className="flex cursor-pointer flex-row" onClick={() => push('/')}>
         <Image
           priority
-          className="h-auto w-[38px] sm:w-[72px]"
-          src="images/logoSVG.svg"
-          width={72}
-          height={72}
-          alt="logo"
-        />
-        <Image
-          priority
-          className="ml-3 h-auto w-[43px] sm:w-20"
-          src="images/logoWord.svg"
-          width={54}
-          height={80}
+          className="h-auto w-[70px] sm:w-[100px]"
+          src="/images/logo.png"
+          width={200}
+          height={200}
           alt="logo"
         />
       </div>
@@ -46,9 +38,11 @@ const Header = () => {
       >
         <p>Проживание</p>
 
-        <Link href="/restaurant">Ресторан &#34;Сосны&#34;</Link>
+        <Link href="/restaurant">Кафе-Бар</Link>
 
-        <p>Горнолыжный отдых</p>
+        <p>Русская баня</p>
+
+        <p>Летние развлечения</p>
 
         <Link href="/about">Контакты</Link>
       </nav>
@@ -65,7 +59,7 @@ const Header = () => {
       >
         <div className="hidden sm:block">
           <address className="font-inter font-normal not-italic">
-            8-800-1000-540
+            8-993-610-68-92
           </address>
           <p className="text-accent font-normal">Бесплатно по РФ</p>
         </div>

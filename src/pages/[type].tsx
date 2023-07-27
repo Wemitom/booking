@@ -16,13 +16,18 @@ import { Variants, variants, variantsPreview } from '@/utils/constants';
 
 export default function LivingOption({
   description,
-  src,
+  feature,
+  srcMain,
+  heroSlider,
   fullName,
   size,
   cost
 }: {
   description: string[];
+  feature: string;
   src: StaticImageData;
+  srcMain: StaticImageData;
+  heroSlider: StaticImageData[];
   fullName: string;
   size: number;
   cost: number;
@@ -33,7 +38,7 @@ export default function LivingOption({
         <title>{fullName}</title>
       </Head>
 
-      <Layout src={src.src}>
+      <Layout src={srcMain.src}>
         <div className="relative z-20 mx-5 mt-4 lg:mx-48 lg:mt-12">
           <div className="flex flex-col gap-12 xl:flex-row">
             <div>
@@ -57,27 +62,9 @@ export default function LivingOption({
               </div>
             </div>
 
-            <div className="flex h-fit justify-center xl:relative xl:-bottom-52 xl:block xl:w-[600px] xl:bg-white xl:px-6 xl:py-3">
+            <div className="xl:bg-transperent flex h-fit justify-center xl:relative xl:-bottom-52 xl:block xl:w-[600px] xl:px-6 xl:py-3">
               <div className="relative w-full">
                 <Button title="Забронировать" size="full" filled />
-                {/* <Image
-                  priority
-                  src="/images/calendar.svg"
-                  width={22.5}
-                  height={24}
-                  alt="calendar"
-                  className="absolute right-5 bottom-5"
-                /> */}
-              </div>
-
-              <div className="font-inter my-6 hidden xl:block">
-                <p className="my-6 font-medium">Включенные услуги:</p>
-
-                <ul className="[&>li]:list-inside [&>li]:list-disc">
-                  <li>Завтрак в ресторане «Сосны»</li>
-                  <li>Меню подушек и одеял</li>
-                  <li>Вечерний сервис</li>
-                </ul>
               </div>
             </div>
           </div>
@@ -86,10 +73,10 @@ export default function LivingOption({
 
       <main>
         <section className="mt-16">
-          <HeroSlider images={[src, src, src]} />
+          <HeroSlider images={heroSlider} />
         </section>
 
-        <FeaturesSection />
+        <FeaturesSection feature={feature} />
         <BookingSection />
         <OtherSuitSection fullName={fullName} />
       </main>

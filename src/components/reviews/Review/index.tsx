@@ -23,8 +23,8 @@ const Review = ({
       className={classNames(
         'w-full bg-secondary py-5 pl-8 pr-3 lg:h-[38rem] lg:px-16 lg:py-11',
         small
-          ? 'sm:h-80 min-[1330px]:h-80 h-80'
-          : 'sm:h-[38rem] min-[1330px]:h-[38rem] h-80'
+          ? 'sm:h-80 min-[1330px]:h-80 h-[34rem]'
+          : 'sm:h-[38rem] min-[1330px]:h-[38rem] h-[34rem]'
       )}
     >
       <div className="flex flex-row">
