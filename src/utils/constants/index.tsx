@@ -83,7 +83,7 @@ export const experiencesNames: Record<
   Летом: [
     {
       name: 'Бадминтон',
-      src: '/images/badminton.JPG',
+      src: '/images/badminton.jpg',
       description: 'Необходимый инвентарь у администрации'
     },
     {
