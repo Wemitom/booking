@@ -3,9 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
-import FindRoom from '@/components/common/FindRoom';
 import Footer from '@/components/common/Footer';
-import Header from '@/components/common/Header';
 import Select from '@/components/common/Select';
 import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
 import MainTitle from '@/components/common/typography/MainTitle';
@@ -76,7 +74,7 @@ export default function ToursPage() {
   return (
     <>
       <Head>
-        <title>Ресторан</title>
+        <title>Экскурсии</title>
       </Head>
 
       <Layout src="/images/restaurant.png" renderFindRoom>

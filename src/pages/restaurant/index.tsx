@@ -14,7 +14,7 @@ export default function Restaurant() {
   return (
     <>
       <Head>
-        <title>Ресторан</title>
+        <title>Кафе-бар на Оке</title>
       </Head>
 
       <Layout src="/images/bar3.jpg">
