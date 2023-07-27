@@ -1,10 +1,11 @@
 import Head from 'next/head';
 
 import Footer from '@/components/common/Footer';
+import Header from '@/components/common/Header';
+import SidebarControlls from '@/components/common/SidebarControlls';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
 import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
-import MainTitle from '@/components/common/typography/MainTitle';
-import Layout from '@/layouts/Layout';
+import { links } from '@/utils/constants';
 
 const Pets = () => {
   return (
@@ -13,14 +14,13 @@ const Pets = () => {
         <title>Проживание с животными</title>
       </Head>
 
-      <Layout src="/images/about.jpg">
-        <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
-          <MainTitle>
-            <p>ПРОЖИВАНИЕ</p>
-            <p>С ЖИВОТНЫМИ</p>
-          </MainTitle>
-        </div>
-      </Layout>
+      <SidebarControlls values={links}>
+        <Header />
+      </SidebarControlls>
+
+      <div className="relative z-20 ml-5 mt-4 pt-32 lg:ml-48 lg:mt-12">
+        <DescriptionSecondary>ПРОЖИВАНИЕ С ЖИВОТНЫМИ</DescriptionSecondary>
+      </div>
 
       <main className="flex flex-col gap-9 px-5 py-20 lg:px-48">
         <DescriptionMain>
