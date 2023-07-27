@@ -325,7 +325,7 @@ export const links = [
           link: '/' + encodeURI(variantsPreview[variant].fullName)
         };
       })
-      .concat({ text: 'Проживание с животными', link: null })
+      .concat({ text: 'Проживание с животными', link: '/pets' })
   },
   {
     name: 'Для гостей',
@@ -336,7 +336,7 @@ export const links = [
       },
       { text: 'Кафе-бар на Оке', link: '/restaurant' },
       { text: 'Развлечения', link: null },
-      { text: 'Проживание с животными', link: null }
+      { text: 'Проживание с животными', link: '/pets' }
     ]
   },
   {

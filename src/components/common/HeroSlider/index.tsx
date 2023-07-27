@@ -26,7 +26,7 @@ HeroSliderContext.displayName = 'HeroSliderContext';
 const HeroSlider = ({ images }: { images: StaticImageData[] }) => {
   const [curSlide, setCurSlide] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
-  const [imgWidth, setImgWidth] = useState(0);
+  const [imgWidth, setImgWidth] = useState(600);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   const ref = useRef<HTMLImageElement | null>(null);
