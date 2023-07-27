@@ -42,7 +42,7 @@ const Header = () => {
 
         <p>Русская баня</p>
 
-        <p>Летние развлечения</p>
+        <p>Развлечения</p>
 
         <Link href="/about">Контакты</Link>
       </nav>
@@ -61,18 +61,29 @@ const Header = () => {
           <address className="font-inter font-normal not-italic">
             8-993-610-68-92
           </address>
-          <p className="text-accent font-normal">Бесплатно по РФ</p>
         </div>
 
-        <button className="ml-auto sm:ml-9">
-          <Image
-            priority
-            src="/images/whatsapp.svg"
-            alt="whatsapp"
-            width={27}
-            height={27}
-          />
-        </button>
+        <div className="flex gap-3">
+          <button className="ml-auto sm:ml-9">
+            <Image
+              priority
+              src="/images/whatsapp.svg"
+              alt="whatsapp"
+              width={27}
+              height={27}
+            />
+          </button>
+
+          <button>
+            <Image
+              priority
+              src="/images/telegram.svg"
+              alt="whatsapp"
+              width={27}
+              height={27}
+            />
+          </button>
+        </div>
       </div>
 
       <button

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import Button from '@/components/common/Button';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
 import SectionTitle from '@/components/common/typography/SectionTitle';
@@ -24,16 +22,9 @@ const BookingSection = () => {
             </DescriptionMain>
           </div>
 
-          <Button title="Забронировать" size="full" filled />
-        </div>
-
-        <div>
-          <Image
-            src="/images/bookSuit.png"
-            alt="living_booking"
-            width={700}
-            height={834}
-          />
+          <div className="lg:w-[280px]">
+            <Button title="Забронировать" size="full" filled />
+          </div>
         </div>
       </div>
     </section>

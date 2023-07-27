@@ -22,21 +22,37 @@ const Footer = () => {
         />
 
         <div className="flex flex-row gap-3">
-          <Image src="/images/phone.svg" alt="phone" width={26} height={26} />
+          <Image
+            src="/images/phone.svg"
+            alt="phone"
+            className="w-auto"
+            width={26}
+            height={26}
+          />
 
           <div>
             <address className="not-italic text-white">8-993-610-68-92</address>
-            <p className="text-accent">Бесплатно по РФ</p>
           </div>
 
-          <button className="ml-4">
-            <Image
-              src="/images/whatsapp.svg"
-              alt="whatsapp"
-              width={27}
-              height={27}
-            />
-          </button>
+          <div className="flex">
+            <button>
+              <Image
+                src="/images/whatsapp.svg"
+                alt="whatsapp"
+                width={27}
+                height={27}
+              />
+            </button>
+
+            <button>
+              <Image
+                src="/images/telegram.svg"
+                alt="telegram"
+                width={27}
+                height={27}
+              />
+            </button>
+          </div>
         </div>
 
         <div className="flex flex-row gap-4">

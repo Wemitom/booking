@@ -73,7 +73,7 @@ export default function LivingOption({
 
       <main>
         <section className="mt-16">
-          <HeroSlider images={heroSlider} />
+          <HeroSlider key={fullName} images={heroSlider} />
         </section>
 
         <FeaturesSection feature={feature} />

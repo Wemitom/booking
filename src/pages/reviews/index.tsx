@@ -16,7 +16,7 @@ export default function Reviews() {
 
       return (
         <Review
-          key={comment.id}
+          key={comment.user}
           {...comment}
           small={reviewInd === 1 || reviewInd === 4}
         />
@@ -30,7 +30,7 @@ export default function Reviews() {
         <title>Отзывы</title>
       </Head>
 
-      <Layout src="/images/landingMainDesk.png">
+      <Layout src="/images/about.jpg">
         <div className="relative z-20 ml-5 mt-4 lg:ml-48 lg:mt-12">
           <MainTitle>ОТЗЫВЫ О НАС</MainTitle>
         </div>
