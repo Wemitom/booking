@@ -27,7 +27,7 @@ const Preview = () => {
           <Image
             src={variantsPreview[chosen as Variants[number]].src}
             alt={chosen}
-            className="my-auto xl:hidden"
+            className="my-auto max-h-screen xl:hidden"
           />
 
           <div>
@@ -91,7 +91,7 @@ const LivingOptionsSection = () => {
         alt="decorator_1"
         className="absolute -left-52 -top-52 -z-10 hidden w-full scale-50 2xl:block"
       />
-      <div className="my-12">
+      <div className="mt-12">
         <SectionTitle>
           <span>ВАРИАНТЫ</span>
           <br />

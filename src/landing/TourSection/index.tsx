@@ -12,7 +12,7 @@ const TourSection = () => {
         <Image
           src={landingTour}
           alt="image_tour"
-          className="mx-auto lg:mx-0 lg:w-1/3"
+          className="mx-auto max-h-screen lg:mx-0 lg:w-1/3"
         />
 
         <div className="flex flex-col">

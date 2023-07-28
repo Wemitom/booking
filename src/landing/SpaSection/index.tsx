@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import spa from 'public/images/spa.png';
-
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
 import SectionTitle from '@/components/common/typography/SectionTitle';
 
@@ -8,7 +5,7 @@ const SpaSection = () => {
   return (
     <section className="mt-16 px-5 lg:px-48">
       <SectionTitle>РУССКАЯ БАНЯ НА ДРОВАХ С БАССЕЙНОМ</SectionTitle>
-      <div className="mt-6 flex flex-col items-center gap-14 sm:flex-row-reverse sm:items-start">
+      <div className="mt-6 flex flex-col items-center gap-14 md:flex-row-reverse md:items-start">
         <DescriptionMain>
           Русская баня в сосновом лесу. Растопка дровами — приятный треск
           бревен, аромат и завораживающая игра пламени с эффектом камина помогут
