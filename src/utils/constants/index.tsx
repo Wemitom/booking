@@ -303,7 +303,6 @@ export const links = [
   {
     name: 'О нас',
     content: [
-      { text: 'Отзывы', link: '/reviews' },
       { text: 'Оплата проживания', link: null },
       { text: 'Карта территории', link: null },
       { text: 'Как доехать', link: null },

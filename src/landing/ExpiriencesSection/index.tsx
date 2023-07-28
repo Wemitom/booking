@@ -110,7 +110,7 @@ const Experineces = () => {
 
 const ExperiencesSection = () => {
   return (
-    <section className="mt-16 px-5 lg:px-0">
+    <section className="my-16 px-5 lg:px-0">
       <div className="lg:px-48">
         <SectionTitle>ЯРКИЕ ВПЕЧАТЛЕНИЯ</SectionTitle>
       </div>

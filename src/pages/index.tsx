@@ -30,7 +30,6 @@ export default function Home() {
         <SpaSection />
         <RestaurantsSection />
         <ExperiencesSection />
-        <CommentsSection />
       </main>
 
       <Footer />
