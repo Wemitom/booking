@@ -16,11 +16,7 @@ const TourSection = () => {
         />
 
         <div className="flex flex-col">
-          <SectionTitle>
-            <span>БАЗА ОТДЫХА</span>
-            <br />
-            <span className="2xl:ml-20">НА ОКЕ</span>
-          </SectionTitle>
+          <SectionTitle>БАЗА ОТДЫХА НА ОКЕ</SectionTitle>
 
           <div className="mt-7 2xl:ml-20">
             <DescriptionMain>
