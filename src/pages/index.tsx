@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import Footer from '@/components/common/Footer';
-import CommentsSection from '@/landing/CommentSection';
 import ExperiencesSection from '@/landing/ExpiriencesSection';
 import IntroSection from '@/landing/IntroSection';
 import LivingOptionsSection from '@/landing/LivingOptionsSection';

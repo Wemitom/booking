@@ -6,26 +6,23 @@ import SectionTitle from '@/components/common/typography/SectionTitle';
 
 const SpaSection = () => {
   return (
-    <section className="mt-16 px-5 lg:px-0">
-      <div className="mb-8 flex flex-col gap-14 lg:justify-between lg:px-48 xl:flex-row xl:items-center">
-        <div className="xl:w-1/3">
-          <SectionTitle>РУССКАЯ БАНЯ НА ДРОВАХ С БАССЕЙНОМ</SectionTitle>
-        </div>
+    <section className="mt-16 px-5 lg:px-48">
+      <SectionTitle>РУССКАЯ БАНЯ НА ДРОВАХ С БАССЕЙНОМ</SectionTitle>
+      <div className="mt-6 flex flex-col items-center gap-14 sm:flex-row-reverse sm:items-start">
+        <DescriptionMain>
+          Русская баня в сосновом лесу. Растопка дровами — приятный треск
+          бревен, аромат и завораживающая игра пламени с эффектом камина помогут
+          расслабить не только тело ,но и разум. Уютная комната отдыха в Русском
+          стиле с небольшой кухонной зоной для полного комфорта гостей. Уличный
+          бассейн с холодной водой под навесом на летней веранде — из жара в
+          холод! Имеется мангальная зона, бесплатный Wi-Fi, доставка из
+          кафе-бара на территории.
+        </DescriptionMain>
 
-        <div className="xl:w-2/3 xl:pt-12">
-          <DescriptionMain>
-            Русская баня в сосновом лесу. Растопка дровами — приятный треск
-            бревен, аромат и завораживающая игра пламени с эффектом камина
-            помогут расслабить не только тело ,но и разум. Уютная комната отдыха
-            в Русском стиле с небольшой кухонной зоной для полного комфорта
-            гостей. Уличный бассейн с холодной водой под навесом на летней
-            веранде — из жара в холод! Имеется мангальная зона, бесплатный
-            Wi-Fi, доставка из кафе-бара на территории.
-          </DescriptionMain>
-        </div>
+        <video autoPlay loop muted className="max-h-screen">
+          <source src="/images/sauna.mov" type="video/mp4" />
+        </video>
       </div>
-
-      <Image src={spa} alt="spa" />
     </section>
   );
 };
