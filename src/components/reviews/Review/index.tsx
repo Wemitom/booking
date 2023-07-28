@@ -37,7 +37,7 @@ const Review = ({
         />
 
         <div className="ml-6">
-          <p className="font-inter font-semibold text-white">{user}</p>
+          <p className="font-serif font-semibold text-white">{user}</p>
 
           <div className="text-accent mt-3 flex gap-1 text-xl sm:text-2xl md:text-3xl">
             {Array.from(Array(5)).map((_, i) =>

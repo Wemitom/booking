@@ -46,7 +46,7 @@ const Tour = ({
 
       <div className="flex justify-center lg:flex-col">
         <Button title="Забронировать" filled />
-        <p className="font-inter mt-3 hidden font-semibold text-white lg:block">
+        <p className="mt-3 hidden font-serif font-semibold text-white lg:block">
           Цена рассчитываються индивидуально
         </p>
       </div>

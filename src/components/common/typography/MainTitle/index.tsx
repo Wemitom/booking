@@ -4,7 +4,7 @@ const MainTitle = ({
   children: JSX.Element | JSX.Element[] | string;
 }) => {
   return (
-    <h1 className="3xl:text-8xl text-5xl font-bold !leading-snug text-white md:text-6xl lg:text-7xl">
+    <h1 className="3xl:text-7xl font-serif text-4xl font-extrabold !leading-snug text-white md:text-5xl lg:text-6xl">
       {children}
     </h1>
   );

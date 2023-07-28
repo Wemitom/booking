@@ -24,7 +24,7 @@ const OtherSuitSection = ({ fullName }: { fullName: string }) => {
       </div>
 
       <Image src={otherSuit.src} alt={otherSuit.fullName} />
-      <h3 className="my-8 text-3xl font-extrabold text-white md:text-4xl xl:text-5xl">
+      <h3 className="my-8 text-3xl font-bold text-white md:text-4xl xl:text-5xl">
         {otherSuit.fullName.toUpperCase()}
       </h3>
       <div className="mb-8">

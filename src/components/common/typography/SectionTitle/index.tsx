@@ -6,7 +6,7 @@ const SectionTitle = ({
   children: JSX.Element | JSX.Element[] | string;
 }) => {
   return (
-    <h2 className="font-inter text-accent mt-12 text-4xl font-bold xl:text-5xl 2xl:text-6xl">
+    <h2 className="text-accent mt-12 font-serif text-3xl font-bold xl:text-4xl 2xl:text-5xl">
       {children}
     </h2>
   );

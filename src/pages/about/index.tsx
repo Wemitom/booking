@@ -20,34 +20,32 @@ const About = () => {
 
       <main className="flex flex-col gap-9 px-5 py-20 lg:flex-row lg:justify-between lg:px-48">
         <div className="flex flex-col gap-8 lg:gap-16">
-          <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
+          <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-4xl">
             КРУГЛОСУТОЧНАЯ СТОЙКА РЕГИСТРАЦИИ
           </h2>
 
           <div>
-            <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
+            <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-4xl">
               8-993-610-68-92
             </h2>
             <p className="text-accent">Звонки с 10:00 до 22:00</p>
           </div>
 
-          <div>
-            <h2 className="mb-6 font-mono text-4xl font-bold text-white md:text-6xl">
+          <div className="flex gap-6">
+            <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-4xl">
               WhatsApp
             </h2>
-          </div>
 
-          <div>
-            <h2 className="mb-6 font-mono text-4xl font-bold text-white md:text-6xl">
+            <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-4xl">
               Telegram
             </h2>
           </div>
 
           <div>
-            <h2 className="font-inter mb-6 text-4xl font-bold text-white md:text-6xl">
+            <h2 className="mb-6 font-serif text-2xl font-bold text-white md:text-4xl">
               НАШ АДРЕС
             </h2>
-            <p className="font-inter mb-6 text-white">
+            <p className="mb-6 font-serif text-white">
               Россия, Калужская область, Тарусский район, сельское поселение
               Волковское, база отдыха «Крутой Яр»
             </p>
@@ -56,7 +54,7 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="font-inter mb-6 text-xl font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+          <h3 className="mb-6 font-serif text-lg font-bold text-white sm:text-2xl lg:text-xl xl:text-2xl">
             bazakrutoyar@yandex.ru
           </h3>
           <p className="text-accent my-6">Задать вопрос, написать отзыв</p>

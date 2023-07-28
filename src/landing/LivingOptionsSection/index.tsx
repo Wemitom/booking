@@ -31,7 +31,7 @@ const Preview = () => {
           />
 
           <div>
-            <h3 className="my-3 text-3xl font-extrabold text-white md:text-4xl xl:text-5xl">
+            <h3 className="my-3 font-serif text-3xl font-extrabold text-white md:text-4xl xl:text-5xl">
               {variantsPreview[
                 chosen as Variants[number]
               ].fullName.toUpperCase()}

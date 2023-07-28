@@ -28,7 +28,7 @@ export default function FindRoom() {
               <DatePicker
                 selected={startDate}
                 onChange={(date) => setStartDate(date)}
-                className="font-inter font-semibold"
+                className="font-serif font-semibold"
               />
             </div>
             <Image
@@ -49,7 +49,7 @@ export default function FindRoom() {
                 selected={endDate}
                 name="endDate"
                 onChange={(date) => setEndDate(date)}
-                className="font-inter font-semibold"
+                className="font-serif font-semibold"
               />
             </div>
             <Image

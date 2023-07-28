@@ -2,7 +2,7 @@ import React from 'react';
 
 const SecondaryTitle = ({ children }: { children: string }) => {
   return (
-    <h3 className="font-inter text-accent text-2xl font-bold lg:text-3xl">
+    <h3 className="text-accent font-serif text-xl font-bold lg:text-2xl">
       {children}
     </h3>
   );

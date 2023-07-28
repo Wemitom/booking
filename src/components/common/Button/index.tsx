@@ -20,7 +20,7 @@ const Button = ({
   return (
     <button
       className={classNames(
-        'text-white p-4 text-center !flex-grow-0 font-inter transition-colors',
+        'text-white p-4 text-center !flex-grow-0 font-serif transition-colors',
         filled
           ? 'bg-accent hover:bg-accent/90'
           : 'bg-transparent border border-accent hover:bg-accent',

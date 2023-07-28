@@ -30,7 +30,7 @@ const Experience = ({
       className="border-accent/50 flex h-20 w-60 cursor-pointer flex-col items-center justify-center border px-16 py-5 text-center"
       onClick={handleClick}
     >
-      <p className="font-inter text-sm font-medium text-white">{name}</p>
+      <p className="font-serif text-sm font-medium text-white">{name}</p>
     </div>
   );
 };

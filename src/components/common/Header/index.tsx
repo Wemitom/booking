@@ -58,7 +58,7 @@ const Header = () => {
         )}
       >
         <div className="hidden sm:block">
-          <address className="font-inter font-normal not-italic">
+          <address className="font-serif font-normal not-italic">
             8-993-610-68-92
           </address>
         </div>

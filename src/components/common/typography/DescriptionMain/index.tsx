@@ -2,7 +2,7 @@ import React from 'react';
 
 const DescriptionMain = ({ children }: { children: string }) => {
   return (
-    <p className="font-medium text-white md:text-lg lg:text-xl 2xl:text-2xl">
+    <p className="md:text-md font-medium text-white lg:text-lg 2xl:text-xl">
       {children}
     </p>
   );
