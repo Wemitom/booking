@@ -334,8 +334,7 @@ export const links = [
         link: null
       },
       { text: 'Кафе-бар на Оке', link: '/restaurant' },
-      { text: 'Развлечения', link: null },
-      { text: 'Проживание с животными', link: '/pets' }
+      { text: 'Развлечения', link: null }
     ]
   },
   {
