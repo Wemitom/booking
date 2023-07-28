@@ -37,9 +37,13 @@ const Pets = () => {
               1.Уборка за вашим питомцем (порядок на территории и в домике)
             </DescriptionSecondary>
           </li>
-          <li className="ml-12">
+          <li className="mb-3 ml-12">
             <DescriptionSecondary>
               2.Обеспечение безопасности и спокойствия других отдыхающих
+            </DescriptionSecondary>
+          </li>
+          <li className="ml-12">
+            <DescriptionSecondary>
               3.Несение ответственности за деятельность,безопасность и здоровье
               животного
             </DescriptionSecondary>
