@@ -4,7 +4,6 @@ import Image from 'next/image';
 import compass from 'public/images/compass.svg';
 import experiences from 'public/images/experiences.jpg';
 
-import Button from '@/components/common/Button';
 import Modal from '@/components/common/Modal';
 import Select from '@/components/common/Select';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
@@ -91,15 +90,6 @@ const Experineces = () => {
                   {chosenExperience.description}
                 </DescriptionSecondary>
               )}
-            </div>
-
-            <div className="w-8/12">
-              <Button
-                title="Закрыть"
-                size="full"
-                onClick={() => setChosenExperience(null)}
-                filled
-              />
             </div>
           </div>
         </Modal>

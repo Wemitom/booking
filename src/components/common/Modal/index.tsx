@@ -4,6 +4,8 @@ import { classNames } from '@/utils/functions';
 import useEscapeKey from '@/utils/hooks/useEscapeKey';
 import useOutsideClickDetect from '@/utils/hooks/useOutsideClickDetect';
 
+import Button from '../Button';
+
 const Modal = ({
   onClose,
   children
@@ -40,7 +42,19 @@ const Modal = ({
         )}
         ref={ref}
       >
-        <div>{children}</div>
+        <div>
+          {children}
+          <div className="mb-3 flex justify-center">
+            <div className="w-8/12">
+              <Button
+                title="Закрыть"
+                size="full"
+                onClick={handleClose}
+                filled
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
