@@ -20,8 +20,8 @@ const Placemarks = ({ houses }: { houses: HouseLocation[] }) => {
           geometry={[+result.lon, +result.lat]}
           modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
           properties={{
-            balloonContentBody: `Дом №${result.id}`,
-            hintContent: `Дом №${result.id}`
+            hintContent: `Коттедж №${result.id}`,
+            balloonContentBody: result.name
           }}
         />
       ))}

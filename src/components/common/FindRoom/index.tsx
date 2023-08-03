@@ -199,7 +199,7 @@ export default function FindRoom() {
                   required
                 >
                   <option value={-1} disabled>
-                    Выберите дом
+                    Выберите коттедж
                   </option>
                   {isLoading ? (
                     <option>Загрузка...</option>
