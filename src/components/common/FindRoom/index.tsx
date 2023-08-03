@@ -185,15 +185,15 @@ export default function FindRoom() {
             />
           </div>
 
-          <div className="flex">
+          <div className="mr-0 flex">
             <div className="flex grow flex-col">
               <label htmlFor="house" className="font-light">
-                Коттедж №
+                Коттедж
               </label>
               <div className="flex w-full flex-col">
                 <select
                   name="house"
-                  className="px-3 py-1 font-serif font-semibold"
+                  className="bg-transparent px-3 py-1 font-serif font-semibold"
                   onChange={(e) => setHouse(+e.target.value)}
                   defaultValue={-1}
                   required
@@ -206,7 +206,7 @@ export default function FindRoom() {
                   ) : (
                     (houses || []).map((h) => (
                       <option key={h.id} value={h.id}>
-                        {h.id}
+                        {h.name}
                       </option>
                     ))
                   )}
@@ -215,7 +215,9 @@ export default function FindRoom() {
             </div>
           </div>
 
-          <Button title="Забронировать" filled submit />
+          <div className="!mr-0">
+            <Button title="Забронировать" filled submit />
+          </div>
         </div>
       </div>
     </form>

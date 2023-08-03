@@ -5,6 +5,7 @@ import useSWR from 'swr';
 import SectionTitle from '@/components/common/typography/SectionTitle';
 
 export interface HouseLocation {
+  name: string;
   id: number;
   lon: number;
   lat: number;
