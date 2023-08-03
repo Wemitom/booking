@@ -1,9 +1,11 @@
 import Image from 'next/image';
+import { ToastContainer } from 'react-toastify';
 
 import FindRoom from '@/components/common/FindRoom';
 import Header from '@/components/common/Header';
 import SidebarControlls from '@/components/common/SidebarControlls';
 import { links } from '@/utils/constants';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = ({
   children,
@@ -55,6 +57,21 @@ const Layout = ({
         />
         <div className="absolute bottom-0 z-0 h-full w-full bg-black/70" />
       </section>
+
+      {renderFindRoom && (
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+      )}
     </>
   );
 };

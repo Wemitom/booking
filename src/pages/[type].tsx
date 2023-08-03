@@ -1,6 +1,7 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import { StaticImageData } from 'next/image';
+import { useRouter } from 'next/router';
 
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
@@ -32,6 +33,8 @@ export default function LivingOption({
   size: number;
   cost: number;
 }) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -64,7 +67,12 @@ export default function LivingOption({
 
             <div className="xl:bg-transperent flex h-fit justify-center xl:relative xl:-bottom-52 xl:block xl:w-[600px] xl:px-6 xl:py-3">
               <div className="relative w-full">
-                <Button title="Забронировать" size="full" filled />
+                <Button
+                  title="Забронировать"
+                  size="full"
+                  filled
+                  onClick={() => router.push('/', '/', { scroll: true })}
+                />
               </div>
             </div>
           </div>

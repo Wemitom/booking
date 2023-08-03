@@ -10,3 +10,38 @@
   align-items: center;
   position: fixed;
 }
+
+.unavailable {
+  background-color: lightgray;
+  border-radius: 0.3rem;
+  color: grey !important;
+  font-weight: bold;
+  cursor: default;
+}
+
+.unavailable:hover {
+  background-color: lightgray !important;
+}
+
+.free {
+  background-color: green;
+  border-radius: 0.3rem;
+  color: white !important;
+  font-weight: bold;
+}
+
+.free:hover {
+  background-color: #016c01 !important;
+}
+
+.booked {
+  background-color: red;
+  border-radius: 0.3rem;
+  color: grey !important;
+  font-weight: bold;
+  cursor: default;
+}
+
+.booked:hover {
+  background-color: red !important;
+}

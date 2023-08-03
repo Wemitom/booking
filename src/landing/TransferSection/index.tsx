@@ -1,42 +1,61 @@
-import Image from 'next/image';
-import map from 'public/images/map.png';
+import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
+import axios from 'axios';
+import useSWR from 'swr';
 
-import Button from '@/components/common/Button';
-import DescriptionSecondary from '@/components/common/typography/DescriptionSecondary';
 import SectionTitle from '@/components/common/typography/SectionTitle';
 
-const TransferSection = () => {
+export interface HouseLocation {
+  id: number;
+  lon: number;
+  lat: number;
+}
+
+const Placemarks = ({ houses }: { houses: HouseLocation[] }) => {
   return (
-    <section className="mt-16 px-5 lg:px-0">
-      <div className="flex flex-col xl:flex-row ">
-        <div className="flex flex-col lg:px-48">
-          <SectionTitle>
-            <span>ОРГАНИЗУЕМ</span>
-            <br />
-            <span className="sm:ml-20">ТРАНСФЕР</span>
-          </SectionTitle>
+    <>
+      {houses.map((result) => (
+        <Placemark
+          key={`placemark at [${result.lon}; ${result.lat}]`}
+          geometry={[+result.lon, +result.lat]}
+          modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
+          properties={{
+            balloonContentBody: `Дом №${result.id}`,
+            hintContent: `Дом №${result.id}`
+          }}
+        />
+      ))}
+    </>
+  );
+};
 
-          <div className="my-4 sm:ml-20 xl:my-10 [&>p]:xl:mb-10">
-            <DescriptionSecondary>
-              Принимаем гостей со всей России и из других стран.
-            </DescriptionSecondary>
-            <DescriptionSecondary>
-              Заберем вас из аэропорта Горно-Алтайска и доставим на место.
-            </DescriptionSecondary>
-            <DescriptionSecondary>
-              Дорога знимает примерно 40 минут и проходит по живописным местам
-              среди алтайских гор, вдоль реки Катунь.
-            </DescriptionSecondary>
-          </div>
+const TransferSection = () => {
+  const { data: houses } = useSWR<HouseLocation[], Error>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/houses`,
+    (arg: string) => axios.get(arg).then((res) => res.data)
+  );
 
-          <div className="mb-6 flex flex-col items-center gap-5 xl:mb-16 xl:flex-row xl:items-start xl:gap-12">
-            <Button title="Заказать трансфер" filled />
-            <Button title="Построить маршрут" />
-          </div>
-        </div>
+  return (
+    <section className="mt-16 px-5 lg:px-48">
+      <div className="flex flex-col gap-6">
+        <SectionTitle>
+          <span>ЗАБРОНИРОВАТЬ КОТТЕДЖ</span>
+        </SectionTitle>
 
-        <div>
-          <Image src={map} alt="map" className="h-full w-full" />
+        <div className="flex h-full w-full justify-center">
+          <YMaps
+            query={{ apikey: process.env.NEXT_PUBLIC_YAPI_KEY, mode: 'debug' }}
+          >
+            <Map
+              defaultState={{
+                center: [54.80766607019127, 37.22630604733787],
+                zoom: 17
+              }}
+              className="aspect-square w-full sm:w-1/2"
+            >
+              <ZoomControl />
+              {houses && <Placemarks houses={houses} />}
+            </Map>
+          </YMaps>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import Button from '@/components/common/Button';
 import Footer from '@/components/common/Footer';
 import ExperiencesSection from '@/landing/ExpiriencesSection';
 import IntroSection from '@/landing/IntroSection';
@@ -7,6 +8,7 @@ import LivingOptionsSection from '@/landing/LivingOptionsSection';
 import RestaurantsSection from '@/landing/RestaurantsSection';
 import SpaSection from '@/landing/SpaSection';
 import TourSection from '@/landing/TourSection';
+import TransferSection from '@/landing/TransferSection';
 
 export default function Home() {
   return (
@@ -29,6 +31,15 @@ export default function Home() {
         <SpaSection />
         <RestaurantsSection />
         <ExperiencesSection />
+        <TransferSection />
+
+        <div className="my-16 flex justify-center">
+          <Button
+            title="Забронировать"
+            filled
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          />
+        </div>
       </main>
 
       <Footer />

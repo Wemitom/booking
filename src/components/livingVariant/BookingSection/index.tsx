@@ -1,10 +1,14 @@
 import React from 'react';
 
+import { useRouter } from 'next/router';
+
 import Button from '@/components/common/Button';
 import DescriptionMain from '@/components/common/typography/DescriptionMain';
 import SectionTitle from '@/components/common/typography/SectionTitle';
 
 const BookingSection = () => {
+  const router = useRouter();
+
   return (
     <section className="mt-12 px-5 lg:px-48">
       <div className="mb-12 xl:hidden">
@@ -23,7 +27,12 @@ const BookingSection = () => {
           </div>
 
           <div className="lg:w-[280px]">
-            <Button title="Забронировать" size="full" filled />
+            <Button
+              title="Забронировать"
+              size="full"
+              filled
+              onClick={() => router.push('/', '/', { scroll: true })}
+            />
           </div>
         </div>
       </div>

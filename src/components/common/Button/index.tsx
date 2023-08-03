@@ -10,15 +10,18 @@ const Button = ({
   title,
   size = 'normal',
   filled,
-  onClick
+  onClick,
+  submit
 }: {
   title: string;
   size?: Sizes;
   filled?: boolean;
   onClick?: () => void;
+  submit?: boolean;
 }) => {
   return (
     <button
+      type={submit ? 'submit' : 'button'}
       className={classNames(
         'text-white p-4 text-center !flex-grow-0 font-serif transition-colors',
         filled
