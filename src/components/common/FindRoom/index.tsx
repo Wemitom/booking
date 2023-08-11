@@ -24,6 +24,7 @@ export default function FindRoom() {
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
   const [house, setHouse] = useState(-1);
+  const [phone, setPhone] = useState('');
 
   const { data: houses, isLoading } = useSWR<HouseLocation[], Error>(
     `${process.env.NEXT_PUBLIC_API_URL}/api/houses`,
@@ -53,7 +54,8 @@ export default function FindRoom() {
     await toast.promise(
       axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/book/${house}`, {
         startDate: moment(startDate).format('YYYY-MM-DD'),
-        endDate: moment(endDate).format('YYYY-MM-DD')
+        endDate: moment(endDate).format('YYYY-MM-DD'),
+        phone
       }),
       {
         pending: 'Бронирование...',
@@ -86,8 +88,8 @@ export default function FindRoom() {
       className="relative z-20 lg:w-full 2xl:absolute"
       onSubmit={handleSubmit}
     >
-      <div className="relative mx-5 mt-8 flex flex-col items-center gap-6 bg-white p-5 sm:pl-28 sm:pr-16 lg:mx-48 2xl:flex-row 2xl:px-5 2xl:py-12 [&>*]:grow">
-        <div className="flex flex-col items-start 2xl:flex-row 2xl:items-center 2xl:shadow-[4px_4px_4px_rgba(0,0,0,0.1)] [&>*]:w-full [&>*]:grow [&>*]:2xl:mr-4">
+      <div className="3xl:flex-row 3xl:px-5 3xl:py-12 relative mx-5 mt-8 flex flex-col items-center gap-6 bg-white p-5 sm:pl-28 sm:pr-16 lg:mx-48 [&>*]:grow">
+        <div className="3xl:flex-row 3xl:items-center 3xl:shadow-[4px_4px_4px_rgba(0,0,0,0.1)] [&>*]:3xl:mr-4 flex flex-col items-start sm:w-full [&>*]:w-full [&>*]:grow">
           <div className="flex">
             <div className="grow">
               <label htmlFor="startDate" className="font-light">
@@ -215,8 +217,24 @@ export default function FindRoom() {
             </div>
           </div>
 
+          <div className="mr-0 flex">
+            <div className="flex grow flex-col">
+              <label htmlFor="phone" className="font-light">
+                Телефон
+              </label>
+              <input
+                type="text"
+                name="phone"
+                placeholder="Номер телефона"
+                pattern="^(\+7|8)?[-\s]?\(?9\d{2}\)?[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$
+              "
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
+          </div>
+
           <div className="!mr-0">
-            <Button title="Забронировать" filled submit />
+            <Button title="Забронировать" filled size="full" submit />
           </div>
         </div>
       </div>
