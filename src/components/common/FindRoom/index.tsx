@@ -226,9 +226,11 @@ export default function FindRoom() {
                 type="text"
                 name="phone"
                 placeholder="Номер телефона"
+                className="bg-transparent px-3 py-1 font-serif font-semibold"
                 pattern="^(\+7|8)?[-\s]?\(?9\d{2}\)?[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$
               "
                 onChange={(e) => setPhone(e.target.value)}
+                required
               />
             </div>
           </div>
